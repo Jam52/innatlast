@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import LargeImageContainer from '../components/LargeImageContainer';
 import Divider from '../components/Divider';
 import RoomCard from '../components/RoomCard';
 import Overview from '../components/Overview';
@@ -34,8 +33,8 @@ const LandingPage = (props) => {
         </p>
       </Overview>
       <div className="section bg-primary">
-        <div className="container">
-          <div className="para flow">
+        <div className="container flow">
+          <div className="para flow flow--md">
             <h2 className="h1">Explore Your Stay</h2>
             <Divider option="2" />
             <p className=" quote">
@@ -45,11 +44,29 @@ const LandingPage = (props) => {
           </div>
           <div className="card-container">
             <RoomCard
-              image={{ src: '/images/room1.jpg', alt: '' }}
-              details={[]}
+              image={{ src: 'room1.jpg', alt: '' }}
+              details={[
+                { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
+                { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
+                { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
+              ]}
             />
-            <RoomCard image={{ src: '', alt: '' }} />
-            <RoomCard image={{ src: '', alt: '' }} />
+            <RoomCard
+              image={{ src: 'room1.jpg', alt: '' }}
+              details={[
+                { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
+                { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
+                { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
+              ]}
+            />
+            <RoomCard
+              image={{ src: 'room1.jpg', alt: '' }}
+              details={[
+                { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
+                { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
+                { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
+              ]}
+            />
           </div>
         </div>
       </div>

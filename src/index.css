@@ -127,6 +127,10 @@ h1, .h1 {
   margin-top: 1rem;
 }
 
+.flow--md > * + * {
+  margin-top: 3rem;
+}
+
 .space {
   display: flex;
   flex-direction: column;
@@ -140,14 +144,11 @@ h1, .h1 {
   margin-left: var(--space-md)
 }
 
-.flow > * + * {
-  margin-top: var(--space-sm)
-}
 
 .card-container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
   column-gap: 5rem;
   row-gap: 3rem;
 }
