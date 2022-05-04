@@ -1,13 +1,72 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Serif&display=swap');
+
+:root {
+/* Colors */
+--primary: #DDDBD3;
+--accent: #9C8214;
+--dark: #464646;
+--mid: #9C8B7F;
+
+/* Util */
+--gradient-light: linear-gradient(to bottom, var(--primary), transparent);
+--gradient-white: linear-gradient(to bottom, white, transparent);
+--box-shadow: 5px 5px 7px rgba(0,0,0,0.3);
+
+/* Fonts */
+--font-body: 'Montserrat', sans-serif;
+--font-title: 'Noto Serif', serif;
+
+/* Spacing */
+--space-sm: 1rem;
+--space-md: 2rem;
+--space-lg: 4rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+/* Components */
+.skip a {
+  position: absolute;
+  display: block;
+  margin-top: 1em;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+.skip a:focus {
+  text-align: center;
+  position: sticky;
+  width: auto;
+  margin: 1rem auto;
+  height: auto;
+  opacity: 1;
+}
+
+
+/* Layout */
+.container {
+  width: 90vw;
+  margin: auto;
+  max-width: 1500px;
+}
+
+
+.space {
+  display: flex;
+}
+
+.space > * + * {
+  margin-left: var(--space-sm)
 }
