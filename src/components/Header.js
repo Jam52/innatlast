@@ -11,9 +11,8 @@ const Header = (props) => {
 
 const Wrapper = styled.header`
   background-color: var(--dark);
-  position: fixed;
+  position: absolute;
   width: 100vw;
-  z-index: 10;
 `;
 
 export default Header;

@@ -36,7 +36,45 @@ body {
 
 }
 
+
+/* Typography */
+
+p, h1, h2, h3, h4, h5, h6 {
+  color: var(--dark);
+}
+
+h1, .h1 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.para {
+  max-width: 40ch;
+}
+
+.quote {
+  font-size: 1.75rem;
+  font-style: italic;
+  font-weight: 700;
+  font-family: var(--font-title);
+  opacity: 0.8;
+}
+
+.quote span {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
+/* Ulti */
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
 /* Components */
+
 .skip a {
   position: absolute;
   display: block;
@@ -56,11 +94,18 @@ body {
 }
 
 
+
 /* Layout */
+
 .container {
-  width: 90vw;
+  width: 85vw;
   margin: auto;
   max-width: 1500px;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 4rem 0;
 }
 
 .space {
@@ -81,17 +126,22 @@ body {
   margin-top: 1rem;
 }
 
-.para {
-  max-width: 40ch;
+.space {
+  display: flex;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
-  color: var(--dark);
+.space > * + * {
+  margin-left: var(--space-sm)
 }
 
+.space-md {
+  display: flex;
+}
 
+.space-md > * + * {
+  margin-left: var(--space-md)
+}
 
-h1, .h1 {
-  font-size: 2rem;
-  font-weight: 400;
+.flow > * + * {
+  margin-top: var(--space-sm)
 }

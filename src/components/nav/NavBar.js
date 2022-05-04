@@ -76,7 +76,6 @@ const NavWrapper = styled.nav`
   .content {
     margin-top: 3rem;
     display: flex;
-    overflow: hidden;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -116,13 +115,13 @@ const NavWrapper = styled.nav`
     display: flex;
     color: white;
     padding: 1rem;
-    z-index: 2;
     flex-direction: column;
   }
 
   @media (min-width: 786px) {
     height: auto;
     padding: 0.2rem 0;
+    overflow: visible;
     .logo {
       display: none;
     }
@@ -139,20 +138,15 @@ const NavWrapper = styled.nav`
       margin-top: 0;
     }
 
-    .dropdown span {
-      opacity: 1;
-    }
-
     .dropdown_content {
       display: none;
       position: absolute;
       background-color: var(--primary);
       box-shadow: var(--box-shadow);
       padding: 1rem;
-      z-index: 2;
       flex-direction: column;
-      width: 12rem;
-
+      width: 13rem;
+      z-index: 5;
       a {
         color: var(--dark);
       }
