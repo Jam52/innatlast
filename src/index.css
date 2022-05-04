@@ -30,6 +30,7 @@
 
 body {
   font-family: var(--font-body);
+  letter-spacing: 0.15rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -62,11 +63,35 @@ body {
   max-width: 1500px;
 }
 
-
 .space {
   display: flex;
+  justify-content: space-between;
 }
 
 .space > * + * {
   margin-left: var(--space-sm)
+}
+
+.flow {
+  display: flex;;
+  flex-direction: column;
+}
+
+.flow > * + * {
+  margin-top: 1rem;
+}
+
+.para {
+  max-width: 40ch;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  color: var(--dark);
+}
+
+
+
+h1, .h1 {
+  font-size: 2rem;
+  font-weight: 400;
 }
