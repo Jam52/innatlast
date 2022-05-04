@@ -44,12 +44,13 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 h1, .h1 {
+  margin:0;
   font-size: 2rem;
   font-weight: 400;
 }
 
 .para {
-  max-width: 40ch;
+  max-width: min(40ch, 65vw);
 }
 
 .quote {
@@ -128,14 +129,11 @@ h1, .h1 {
 
 .space {
   display: flex;
+  flex-direction: column;
 }
 
 .space > * + * {
   margin-left: var(--space-sm)
-}
-
-.space-md {
-  display: flex;
 }
 
 .space-md > * + * {
@@ -144,4 +142,23 @@ h1, .h1 {
 
 .flow > * + * {
   margin-top: var(--space-sm)
+}
+
+.card-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  column-gap: 5rem;
+  row-gap: 3rem;
+}
+
+@media (min-width: 786px) {
+  .space {
+    flex-direction: row;
+  }
+  
+  .space > * + * {
+    margin-top: var(--space-sm)
+  }
+  
 }

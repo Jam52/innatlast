@@ -25,7 +25,7 @@ const Navbar = (props) => {
       </NavLink>
       <div className="content">
         <div className="dropdown">
-          <div className="space">
+          <div>
             <span>Stay</span>
             <img src="/images/arrow.svg" alt="dropdown" />
           </div>
@@ -99,6 +99,7 @@ const NavWrapper = styled.nav`
     display: inline-block;
 
     img {
+      margin-left: 0.5rem;
       height: 0.7rem;
       transform: translateY(2px);
     }
