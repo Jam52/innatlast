@@ -2,6 +2,8 @@ import { Route, Routes } from 'react-router-dom';
 import { DefaultButton } from './components/buttons';
 import Header from './components/Header';
 import LandingPage from './views/LandingPage';
+import RoomPage from './views/RoomPage';
+import roomDetails from './components/roomDetails.json';
 
 function App() {
   return (
@@ -14,6 +16,10 @@ function App() {
       <Header />
       <Routes>
         <Route path="" element={<LandingPage />} />
+        <Route
+          path="/journey"
+          element={<RoomPage room={roomDetails.journey} />}
+        />
       </Routes>
     </div>
   );

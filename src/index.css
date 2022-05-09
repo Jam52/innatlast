@@ -46,6 +46,7 @@ html {
 p, h1, h2, h3, h4, h5, h6 {
   color: var(--dark);
   margin: 0;
+  text-transform: capitalize;
 }
 
 h1, .h1 {
@@ -59,6 +60,10 @@ h3, .h3 {
 
 .para {
   max-width: min(40ch, 65vw);
+}
+
+.para--right {
+  margin-left: auto;
 }
 
 .quote {
@@ -117,9 +122,13 @@ h3, .h3 {
   max-width: 200rem;
 }
 
+.page > * + *{
+  margin-top: 5vh;
+}
+
 .section {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 5rem 0;
 }
 
 .space {
@@ -141,7 +150,11 @@ h3, .h3 {
 }
 
 .flow--md > * + * {
-  margin-top: 3rem;
+  margin-top: 2rem;
+}
+
+.flow--lg > * + * {
+  margin-top: 6rem;
 }
 
 .space {

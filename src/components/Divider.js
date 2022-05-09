@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 const Divider = (props) => {
-  console.log(props);
   return (
-    <Wrapper left={props.left} className="para">
+    <Wrapper right={props.right} className="para">
       <img src={`images/pine-${props.option ?? 1}.svg`} alt=""></img>
     </Wrapper>
   );
@@ -13,20 +12,20 @@ const Wrapper = styled.div`
   grid-area: divider;
   position: relative;
   width: 90%;
-  transform: ${({ left }) => (left ? ' translateY(-49.5%) scaleX(-1) ' : '')};
+  transform: ${({ right }) => (right ? 'translateY(-49.5%) scaleX(-1)' : '')};
   &::before {
     content: '';
     position: absolute;
     right: 0;
-    height: 3.5px;
+    height: 0.8vmin;
     width: 100vw;
     background-color: var(--accent);
   }
   img {
-    width: 16vmin;
+    width: 20vmin;
     position: absolute;
     transform: translateY(-49.5%);
-    right: -16vmin;
+    right: -20vmin;
   }
 
   @media (min-width: 850px) {

@@ -1,14 +1,14 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Divider from './Divider';
 import LargeImageContainer from './LargeImageContainer';
 
 const Overview = (props) => {
   return (
     <div className="section container">
-      <Wrapper>
-        <div className="header align flow">
-          <h1 className="para">You made it, AT LAST!</h1>
-          <Divider left />
+      <Wrapper flipped={props.flipped}>
+        <div className="header align flow flow--md">
+          <h1 className="para">{props.title}</h1>
+          <Divider right={!props.flipped} />
         </div>
         <div className="image">
           <LargeImageContainer
@@ -46,7 +46,14 @@ const Wrapper = styled.section`
   }
 
   .align {
-    margin-left: 15vw;
+    ${({ flipped }) =>
+      flipped
+        ? css`
+            margin-right: 10vw;
+          `
+        : css`
+            margin-left: 10vw;
+          `}
   }
 
   @media (min-width: 550px) {
@@ -54,15 +61,26 @@ const Wrapper = styled.section`
   }
 
   @media (min-width: 850px) {
-    grid-template-columns: 1fr auto;
     grid-template-rows: auto 1fr;
-    grid-template-areas:
-      'image header'
-      'image para';
+    ${({ flipped }) =>
+      flipped
+        ? css`
+            grid-template-columns: auto 1fr;
+            grid-template-areas:
+              'header image'
+              'para image';
+          `
+        : css`
+            grid-template-columns: 1fr auto;
+            grid-template-areas:
+              'image header'
+              'image para';
+          `};
     column-gap: 20vmin;
     row-gap: 5rem;
     .align {
       margin-left: 0;
+      margin-right: 0;
     }
     .image {
       width: 40vw;

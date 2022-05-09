@@ -24,9 +24,9 @@ const RoomCard = (props) => {
 };
 
 const Wrapper = styled.article`
-  clip-path: polygon(5vh 0%, 100% 0%, 100% 100%, 0% 100%, 0% 5vh);
+  clip-path: polygon(8vh 0%, 100% 0%, 100% 100%, 0% 100%, 0% 8vh);
   width: 100%;
-  max-width: 20rem;
+  max-width: 25rem;
   margin: auto;
   background: var(--gradient-white);
   transition: all 1s;
@@ -42,9 +42,6 @@ const Wrapper = styled.article`
     h3 {
       filter: brightness(1);
     }
-
-    .image {
-    }
   }
 
   h3 {
@@ -53,7 +50,7 @@ const Wrapper = styled.article`
     min-height: 3rem;
     margin: 0;
     padding: 1rem 2rem;
-    filter: brightness(1.3);
+    filter: brightness(1.4);
   }
 
   .image {
