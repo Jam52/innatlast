@@ -7,7 +7,7 @@ const LandingPage = (props) => {
   return (
     <Wrapper>
       <div className="section landing content">
-        <img className="logo" src="/images/logo.svg" alt="logo" />
+        <img className="logo" src="/images/logo.svg" alt="logo" id="content" />
       </div>
       <Overview
         imageOne={{
@@ -50,6 +50,7 @@ const LandingPage = (props) => {
                 { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
                 { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
               ]}
+              title="The Journey"
             />
             <RoomCard
               image={{ src: 'room1.jpg', alt: '' }}

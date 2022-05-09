@@ -3,12 +3,16 @@ import styled from 'styled-components';
 const RoomCard = (props) => {
   return (
     <Wrapper>
-      <img src={`/images/${props.image.src}`} alt={props.image.alt}></img>
-      <h3>{props.title}</h3>
-      <div className="details flow flow--md">
+      <img
+        className="image"
+        src={`/images/${props.image.src}`}
+        alt={props.image.alt}
+      ></img>
+      <h3 className="bg-dark">{props.title}</h3>
+      <div className="details flow">
         {props.details.map((detail, index) => {
           return (
-            <div key={index} className="detail space">
+            <div key={index} className="details-item space">
               <img src={`/images/${detail.src}`} alt={detail.alt} />
               <p>{detail.text}</p>
             </div>
@@ -20,26 +24,52 @@ const RoomCard = (props) => {
 };
 
 const Wrapper = styled.article`
-  clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 10%);
+  clip-path: polygon(5vh 0%, 100% 0%, 100% 100%, 0% 100%, 0% 5vh);
   width: 100%;
+  max-width: 20rem;
+  margin: auto;
   background: var(--gradient-white);
-  transition: all 0.3s;
+  transition: all 1s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+
   &:hover {
-    box-shadow: var(--box-shadow);
+    box-shadow: 5px 10px #888888;
     background: white;
+
+    h3 {
+      filter: brightness(1);
+    }
+
+    .image {
+    }
   }
 
-  img {
+  h3 {
+    width: 100%;
+    transition: all 1s;
+    min-height: 3rem;
+    margin: 0;
+    padding: 1rem 2rem;
+    filter: brightness(1.3);
+  }
+
+  .image {
     height: 40%;
     width: 100%;
     object-fit: cover;
   }
 
-  .detail {
-    margin: 0.5rem 2rem;
+  .details {
+    padding: 1.5rem 1rem 2rem 1rem;
+  }
+
+  .details-item {
     flex-direction: row;
     align-items: center;
-    max-width: 15rem;
+    justify-content: center;
     img {
       width: 2rem;
     }

@@ -25,11 +25,8 @@ const LargeImageContainer = ({ imageOne, imageTwo }) => {
 
 const Wrapper = styled.div`
   position: relative;
-  height: 70vh;
-  width: 80vh;
-  max-width: 80vw;
-  max-height: 80vw;
-  grid-area: image;
+  height: 100%;
+  width: 100%;
 
   .image-one {
     position: absolute;

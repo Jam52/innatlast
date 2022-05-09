@@ -6,16 +6,17 @@ const Overview = (props) => {
   return (
     <div className="section container">
       <Wrapper>
-        <div className="heading align">
-          <h1 className="header para">You made it, AT LAST!</h1>
+        <div className="header align flow">
+          <h1 className="para">You made it, AT LAST!</h1>
           <Divider left />
         </div>
-
-        <LargeImageContainer
-          imageOne={props.imageOne}
-          imageTwo={props.imageTwo}
-        />
-        <div className="paragraph align">{props.children}</div>
+        <div className="image">
+          <LargeImageContainer
+            imageOne={props.imageOne}
+            imageTwo={props.imageTwo}
+          />
+        </div>
+        <div className="paragraph align flow">{props.children}</div>
       </Wrapper>
     </div>
   );
@@ -24,19 +25,19 @@ const Overview = (props) => {
 const Wrapper = styled.section`
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, auto);
+  grid-template-rows: auto 80vmin auto;
   grid-template-areas:
     'header'
-    'divider'
     'image'
     'para';
-  row-gap: 3rem;
+  row-gap: 5rem;
 
-  .align {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+  .image {
+    grid-area: image;
+    width: 80vw;
+    height: 80vw;
   }
+
   .paragraph {
     grid-area: para;
   }
@@ -44,15 +45,29 @@ const Wrapper = styled.section`
     grid-area: header;
   }
 
-  @media (min-width: 786px) {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
+  .align {
+    margin-left: 15vw;
+  }
+
+  @media (min-width: 550px) {
+    row-gap: 7rem;
+  }
+
+  @media (min-width: 850px) {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto 1fr;
     grid-template-areas:
       'image header'
-      'image divider'
       'image para';
-    row-gap: 1.5rem;
-    column-gap: 1rem;
+    column-gap: 20vmin;
+    row-gap: 5rem;
+    .align {
+      margin-left: 0;
+    }
+    .image {
+      width: 40vw;
+      height: 40vw;
+    }
   }
 `;
 

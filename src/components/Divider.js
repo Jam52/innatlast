@@ -12,30 +12,24 @@ const Divider = (props) => {
 const Wrapper = styled.div`
   grid-area: divider;
   position: relative;
-  margin: 2.5rem 0 0 0;
-  width: 100%;
-  transform: ${({ left }) =>
-    left ? ' translateY(-49.5%) scaleX(-1) translateX(5%)' : ''};
+  width: 90%;
+  transform: ${({ left }) => (left ? ' translateY(-49.5%) scaleX(-1) ' : '')};
   &::before {
     content: '';
     position: absolute;
     right: 0;
     height: 3.5px;
-    width: 50rem;
+    width: 100vw;
     background-color: var(--accent);
   }
   img {
-    width: 5rem;
+    width: 16vmin;
     position: absolute;
     transform: translateY(-49.5%);
-    right: -5rem;
+    right: -16vmin;
   }
 
-  @media (min-width: 786px) {
-    img {
-      width: 7rem;
-      right: -7rem;
-    }
+  @media (min-width: 850px) {
   }
 `;
 

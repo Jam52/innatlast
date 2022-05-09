@@ -33,7 +33,11 @@ body {
   letter-spacing: 0.15rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
 
+html {
+  overflow-x: hidden;
 }
 
 
@@ -41,11 +45,15 @@ body {
 
 p, h1, h2, h3, h4, h5, h6 {
   color: var(--dark);
+  margin: 0;
 }
 
 h1, .h1 {
-  margin:0;
   font-size: 2rem;
+  font-weight: 400;
+}
+
+h3, .h3 {
   font-weight: 400;
 }
 
@@ -59,6 +67,7 @@ h1, .h1 {
   font-weight: 700;
   font-family: var(--font-title);
   opacity: 0.8;
+  max-width: 30ch;
 }
 
 .quote span {
@@ -72,6 +81,10 @@ h1, .h1 {
 
 .bg-primary {
   background-color: var(--primary);
+}
+.bg-dark {
+  background-color: var(--dark);
+  color: white;
 }
 
 /* Components */
@@ -99,9 +112,9 @@ h1, .h1 {
 /* Layout */
 
 .container {
-  width: 85vw;
+  width: 80vw;
   margin: auto;
-  max-width: 1500px;
+  max-width: 200rem;
 }
 
 .section {
@@ -148,7 +161,7 @@ h1, .h1 {
 .card-container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   column-gap: 5rem;
   row-gap: 3rem;
 }
@@ -160,6 +173,13 @@ h1, .h1 {
   
   .space > * + * {
     margin-top: var(--space-sm)
+  }
+  
+}
+
+@media (min-width: 1800px) {
+  body {
+    font-size: 1.3rem;
   }
   
 }

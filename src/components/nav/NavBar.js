@@ -67,7 +67,6 @@ const Navbar = (props) => {
 
 const NavWrapper = styled.nav`
   position: relative;
-  width: 70vw;
   padding: 2rem 0;
   transition: all 0.3s;
   height: ${({ isOpen }) => (isOpen ? '100vh' : '6.5rem')};
