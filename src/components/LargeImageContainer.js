@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { useState } from 'react';
 
 const LargeImageContainer = ({ imageOne, imageTwo }) => {
@@ -25,8 +25,8 @@ const LargeImageContainer = ({ imageOne, imageTwo }) => {
 
 const Wrapper = styled.div`
   position: relative;
-  height: 70vh;
-  width: 80vh;
+  height: 100%;
+  width: 100%;
 
   .image-one {
     position: absolute;

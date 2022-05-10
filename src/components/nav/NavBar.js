@@ -25,7 +25,7 @@ const Navbar = (props) => {
       </NavLink>
       <div className="content">
         <div className="dropdown">
-          <div className="space">
+          <div>
             <span>Stay</span>
             <img src="/images/arrow.svg" alt="dropdown" />
           </div>
@@ -67,7 +67,6 @@ const Navbar = (props) => {
 
 const NavWrapper = styled.nav`
   position: relative;
-  width: 70vw;
   padding: 2rem 0;
   transition: all 0.3s;
   height: ${({ isOpen }) => (isOpen ? '100vh' : '6.5rem')};
@@ -76,7 +75,6 @@ const NavWrapper = styled.nav`
   .content {
     margin-top: 3rem;
     display: flex;
-    overflow: hidden;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -100,6 +98,7 @@ const NavWrapper = styled.nav`
     display: inline-block;
 
     img {
+      margin-left: 0.5rem;
       height: 0.7rem;
       transform: translateY(2px);
     }
@@ -116,13 +115,13 @@ const NavWrapper = styled.nav`
     display: flex;
     color: white;
     padding: 1rem;
-    z-index: 2;
     flex-direction: column;
   }
 
   @media (min-width: 786px) {
     height: auto;
     padding: 0.2rem 0;
+    overflow: visible;
     .logo {
       display: none;
     }
@@ -139,20 +138,15 @@ const NavWrapper = styled.nav`
       margin-top: 0;
     }
 
-    .dropdown span {
-      opacity: 1;
-    }
-
     .dropdown_content {
       display: none;
       position: absolute;
       background-color: var(--primary);
       box-shadow: var(--box-shadow);
       padding: 1rem;
-      z-index: 2;
       flex-direction: column;
-      width: 12rem;
-
+      width: 13rem;
+      z-index: 5;
       a {
         color: var(--dark);
       }

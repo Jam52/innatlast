@@ -33,10 +33,67 @@ body {
   letter-spacing: 0.15rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
 
+html {
+  overflow-x: hidden;
+}
+
+
+/* Typography */
+
+p, h1, h2, h3, h4, h5, h6 {
+  color: var(--dark);
+  margin: 0;
+  text-transform: capitalize;
+}
+
+h1, .h1 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+h3, .h3 {
+  font-weight: 400;
+}
+
+.para {
+  max-width: min(40ch, 65vw);
+}
+
+.para--right {
+  margin-left: auto;
+}
+
+.quote {
+  font-size: 1.75rem;
+  font-style: italic;
+  font-weight: 700;
+  font-family: var(--font-title);
+  opacity: 0.8;
+  max-width: 30ch;
+}
+
+.quote span {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
+/* Ulti */
+
+.bg-primary {
+  background-color: var(--primary);
+}
+.bg-dark {
+  background-color: var(--dark);
+  color: white;
 }
 
 /* Components */
+
 .skip a {
   position: absolute;
   display: block;
@@ -56,11 +113,22 @@ body {
 }
 
 
+
 /* Layout */
+
 .container {
-  width: 90vw;
+  width: 80vw;
   margin: auto;
-  max-width: 1500px;
+  max-width: 200rem;
+}
+
+.page > * + *{
+  margin-top: 5vh;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 5rem 0;
 }
 
 .space {
@@ -81,17 +149,50 @@ body {
   margin-top: 1rem;
 }
 
-.para {
-  max-width: 40ch;
+.flow--md > * + * {
+  margin-top: 2rem;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
-  color: var(--dark);
+.flow--lg > * + * {
+  margin-top: 6rem;
+}
+
+.space {
+  display: flex;
+  flex-direction: column;
+}
+
+.space > * + * {
+  margin-left: var(--space-sm)
+}
+
+.space-md > * + * {
+  margin-left: var(--space-md)
 }
 
 
+.card-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  column-gap: 5rem;
+  row-gap: 3rem;
+}
 
-h1, .h1 {
-  font-size: 2rem;
-  font-weight: 400;
+@media (min-width: 786px) {
+  .space {
+    flex-direction: row;
+  }
+  
+  .space > * + * {
+    margin-top: var(--space-sm)
+  }
+  
+}
+
+@media (min-width: 1800px) {
+  body {
+    font-size: 1.3rem;
+  }
+  
 }
