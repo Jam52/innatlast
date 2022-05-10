@@ -34,6 +34,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  color: var(--dark);
 }
 
 html {
@@ -44,7 +45,6 @@ html {
 /* Typography */
 
 p, h1, h2, h3, h4, h5, h6 {
-  color: var(--dark);
   margin: 0;
   text-transform: capitalize;
 }
@@ -55,6 +55,7 @@ h1, .h1 {
 }
 
 h3, .h3 {
+  font-size: 1.6rem;
   font-weight: 400;
 }
 
@@ -112,6 +113,14 @@ h3, .h3 {
   opacity: 1;
 }
 
+.card-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  column-gap: 5rem;
+  row-gap: 3rem;
+}
+
 
 
 /* Layout */
@@ -131,15 +140,6 @@ h3, .h3 {
   padding: 5rem 0;
 }
 
-.space {
-  display: flex;
-  justify-content: space-between;
-}
-
-.space > * + * {
-  margin-left: var(--space-sm)
-}
-
 .flow {
   display: flex;;
   flex-direction: column;
@@ -147,6 +147,10 @@ h3, .h3 {
 
 .flow > * + * {
   margin-top: 1rem;
+}
+
+.flow--sm > * + * {
+  margin-top: 0.5rem;
 }
 
 .flow--md > * + * {
@@ -157,8 +161,18 @@ h3, .h3 {
   margin-top: 6rem;
 }
 
+.hflow {
+  display: flex;
+  align-items: center;
+}
+
+.hflow > * + * {
+  margin-left: 1rem;
+}
+
 .space {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
 }
 
@@ -171,13 +185,10 @@ h3, .h3 {
 }
 
 
-.card-container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  column-gap: 5rem;
-  row-gap: 3rem;
-}
+
+
+
+
 
 @media (min-width: 786px) {
   .space {

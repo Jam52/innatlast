@@ -4,6 +4,7 @@ import Header from './components/Header';
 import LandingPage from './views/LandingPage';
 import RoomPage from './views/RoomPage';
 import roomDetails from './components/roomDetails.json';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           element={<RoomPage room={roomDetails.journey} />}
         />
       </Routes>
+      <Footer />
     </div>
   );
 }
