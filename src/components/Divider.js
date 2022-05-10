@@ -11,8 +11,9 @@ const Divider = (props) => {
 const Wrapper = styled.div`
   grid-area: divider;
   position: relative;
-  width: 90%;
-  transform: ${({ right }) => (right ? 'translateY(-49.5%) scaleX(-1)' : '')};
+  width: 100%;
+  transform: ${({ right }) =>
+    right ? 'translate(5%, -49.5%) scaleX(-1)' : 'translate(-5%, 0%)'};
   &::before {
     content: '';
     position: absolute;

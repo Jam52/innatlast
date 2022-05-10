@@ -4,6 +4,8 @@ import Header from './components/Header';
 import LandingPage from './views/LandingPage';
 import RoomPage from './views/RoomPage';
 import roomDetails from './components/roomDetails.json';
+import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
         </DefaultButton>
       </div>
       <Header />
+      <ScrollToTop />
       <Routes>
         <Route path="" element={<LandingPage />} />
         <Route
@@ -21,6 +24,7 @@ function App() {
           element={<RoomPage room={roomDetails.journey} />}
         />
       </Routes>
+      <Footer />
     </div>
   );
 }
