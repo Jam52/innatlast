@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Divider from '../components/Divider';
+import ImageCarosel from '../components/ImageCarosel';
 
 const RoomPage = ({ room }) => {
   return (
@@ -23,7 +24,24 @@ const RoomPage = ({ room }) => {
       </div>
 
       <section className="bg-primary">
-        <div className="container image-carosel"></div>
+        <div className="container image-carousel">
+          <ImageCarosel
+            images={[
+              {
+                src: 'https://picsum.photos/id/1018/1000/600/',
+                alt: '',
+              },
+              {
+                src: 'https://picsum.photos/id/1015/1000/600/',
+                alt: '',
+              },
+              {
+                src: 'https://picsum.photos/id/1019/1000/600/',
+                alt: '',
+              },
+            ]}
+          />
+        </div>
       </section>
     </Wrapper>
   );
@@ -37,8 +55,10 @@ const Wrapper = styled.main`
     object-fit: cover;
   }
 
-  .image-carosel {
+  .image-carousel {
     padding: 4rem 0;
+    overflow: hidden;
+    height: 100vmin;
   }
 `;
 

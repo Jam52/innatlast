@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   position: relative;
   width: 100%;
   transform: ${({ right }) =>
-    right ? 'translate(5%, -49.5%) scaleX(-1)' : 'translate(-5%, 0%)'};
+    right ? 'translate(3%, -49.5%) scaleX(-1)' : 'translate(-3%, 0%)'};
   &::before {
     content: '';
     position: absolute;
