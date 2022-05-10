@@ -20,7 +20,7 @@ const Navbar = (props) => {
         <div />
         <div />
       </MenuButton>
-      <NavLink to="/">
+      <NavLink to="/" onClick={() => toggleOpen(!isOpen)}>
         <img className="logo" src="images/logo_house.svg" alt="home"></img>
       </NavLink>
       <div className="content">

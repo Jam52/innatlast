@@ -13,6 +13,7 @@ const Wrapper = styled.header`
   background-color: var(--dark);
   position: absolute;
   width: 100vw;
+  z-index: 10;
 `;
 
 export default Header;
