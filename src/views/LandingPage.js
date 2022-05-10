@@ -55,7 +55,7 @@ const LandingPage = (props) => {
               title="The Journey"
             />
             <RoomCard
-              image={{ src: 'room1.jpg', alt: '' }}
+              image={{ src: 'room2.jpg', alt: '' }}
               details={[
                 { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
                 { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
@@ -64,7 +64,7 @@ const LandingPage = (props) => {
               title="The Honeymoon"
             />
             <RoomCard
-              image={{ src: 'room1.jpg', alt: '' }}
+              image={{ src: 'room3.jpg', alt: '' }}
               details={[
                 { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
                 { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },

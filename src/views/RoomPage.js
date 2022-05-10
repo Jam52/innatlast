@@ -33,6 +33,8 @@ const Wrapper = styled.main`
   padding: 8rem 0 0 0;
   .main-image {
     width: 100%;
+    max-height: 90vh;
+    object-fit: cover;
   }
 
   .image-carosel {
