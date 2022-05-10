@@ -68,6 +68,15 @@ const Wrapper = styled.footer`
     justify-content: flex-end;
     text-align: right;
   }
+
+  @media (min-width: 850px) {
+    .container {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        'contact nav'
+        'link link';
+    }
+  }
 `;
 
 export default Footer;
