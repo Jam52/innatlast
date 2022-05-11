@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Divider from '../components/Divider';
-import ImageCarosel from '../components/ImageCarosel';
+import ImageCarosel from '../components/Carousel/ImageCarosel';
 
 const RoomPage = ({ room }) => {
   return (

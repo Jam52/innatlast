@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { useState } from 'react';
+import CarouselButtons from './carouselButtons';
 
 const ImageCarosel = ({ images }) => {
   const [centerImageIndex, setCenterImageIndex] = useState(0);
@@ -38,8 +39,12 @@ const ImageCarosel = ({ images }) => {
           />
         </div>
       </div>
-
       <div className="fade--left" />
+      <CarouselButtons
+        numImages={images.length}
+        currentSelectedIndex={centerImageIndex}
+        onClick={setCenterImageIndex}
+      />
     </Wrapper>
   );
 };
@@ -62,9 +67,6 @@ const Wrapper = styled.div`
         100 / numImages + (100 / numImages) * centerImageIndex
       }%)`};
   }
-
-  /* .inner > * {
-  } */
 
   .fade {
     display: none;
