@@ -23,6 +23,11 @@ function App() {
           path="/journey"
           element={<RoomPage room={roomDetails.journey} />}
         />
+        <Route path="/tribe" element={<RoomPage room={roomDetails.tribe} />} />
+        <Route
+          path="/honeymoon"
+          element={<RoomPage room={roomDetails.honeymoon} />}
+        />
       </Routes>
       <Footer />
     </div>

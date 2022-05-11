@@ -7,8 +7,32 @@
       "Proin quis dignissim turpis. Vestibulum vitae ligula et orci elementum varius. Mauris vel ornare massa. Donec placerat ut risus eget pretium. In et dolor augue."
     ],
     "maxOccupancy": "2 Adults",
-    "perNightRate": 395
+    "perNightRate": 395,
+    "roomDetails": [],
+    "whatsIncluded": []
   },
-  "roomDetails": [],
-  "whatsIncluded": []
+  "tribe": {
+    "title": "The Tribe",
+    "mainImage": { "src": "/images/room2.jpg", "alt": "Description of image" },
+    "opening-details": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et arcu justo. Sed congue nibh nibh, eu laoreet metus imperdiet non.",
+      "Proin quis dignissim turpis. Vestibulum vitae ligula et orci elementum varius. Mauris vel ornare massa. Donec placerat ut risus eget pretium. In et dolor augue."
+    ],
+    "maxOccupancy": "4 Adults",
+    "perNightRate": 595,
+    "roomDetails": [],
+    "whatsIncluded": []
+  },
+  "honeymoon": {
+    "title": "The Honeymoon",
+    "mainImage": { "src": "/images/room3.jpg", "alt": "Description of image" },
+    "opening-details": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et arcu justo. Sed congue nibh nibh, eu laoreet metus imperdiet non.",
+      "Proin quis dignissim turpis. Vestibulum vitae ligula et orci elementum varius. Mauris vel ornare massa. Donec placerat ut risus eget pretium. In et dolor augue."
+    ],
+    "maxOccupancy": "2 Adults",
+    "perNightRate": 495,
+    "roomDetails": [],
+    "whatsIncluded": []
+  }
 }
