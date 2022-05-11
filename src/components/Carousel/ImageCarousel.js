@@ -3,7 +3,7 @@ import { useState } from 'react';
 import CarouselButtons from './carouselButtons';
 import { useSwipeable } from 'react-swipeable';
 
-const ImageCarosel = ({ images }) => {
+const ImageCarousel = ({ images }) => {
   const [centerImageIndex, setCenterImageIndex] = useState(images.length);
   const centerImage = centerImageIndex % images.length;
 
@@ -138,4 +138,4 @@ const CarouselImage = styled.img`
         `};
 `;
 
-export default ImageCarosel;
+export default ImageCarousel;

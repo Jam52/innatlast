@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Divider from '../components/Divider';
-import ImageCarosel from '../components/Carousel/ImageCarosel';
+import ImageCarousel from '../components/Carousel/ImageCarousel';
 
 const RoomPage = ({ room }) => {
   return (
@@ -25,7 +25,7 @@ const RoomPage = ({ room }) => {
 
       <section className="bg-primary">
         <div className="container image-carousel">
-          <ImageCarosel
+          <ImageCarousel
             images={[
               {
                 src: 'https://picsum.photos/id/1018/1000/600/',
