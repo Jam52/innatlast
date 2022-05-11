@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 
 const CarouselButtons = ({ numImages, currentSelectedIndex, onClick }) => {
-  console.log(currentSelectedIndex);
   return (
     <Wrapper>
       {[...Array(numImages)].map((num, index) => {
-        console.log(index === currentSelectedIndex);
         return (
           <DotWrap
             key={index}
@@ -20,7 +18,7 @@ const CarouselButtons = ({ numImages, currentSelectedIndex, onClick }) => {
 };
 
 const Wrapper = styled.div`
-  padding: 2rem 0;
+  padding: 2rem 0 0 0;
   display: flex;
   justify-content: center;
   width: 100%;

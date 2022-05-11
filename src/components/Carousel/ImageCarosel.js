@@ -1,12 +1,27 @@
 import styled, { css } from 'styled-components';
 import { useState } from 'react';
 import CarouselButtons from './carouselButtons';
+import { useSwipeable } from 'react-swipeable';
 
 const ImageCarosel = ({ images }) => {
-  const [centerImageIndex, setCenterImageIndex] = useState(0);
+  const [centerImageIndex, setCenterImageIndex] = useState(images.length);
+  const centerImage = centerImageIndex % images.length;
 
+  const handlers = useSwipeable({
+    onSwipedLeft: () => {
+      setCenterImageIndex(centerImageIndex + 1);
+    },
+    onSwipedRight: () => setCenterImageIndex(centerImageIndex - 1),
+    swipeDuration: 500,
+    preventScrollOnSwipe: true,
+    trackMouse: true,
+  });
   return (
-    <Wrapper centerImageIndex={centerImageIndex} numImages={images.length + 2}>
+    <Wrapper
+      centerImageIndex={centerImage}
+      numImages={images.length + 2}
+      {...handlers}
+    >
       <div className="fade" />
       <div className="outter">
         <div className="inner">
@@ -18,7 +33,6 @@ const ImageCarosel = ({ images }) => {
             onClick={() => setCenterImageIndex(images.length - 1)}
           />
           {images.map(({ src, alt }, index) => {
-            console.log(`index: ${index} centerIndex: ${centerImageIndex}`);
             return (
               <CarouselImage
                 numImages={images.length + 2}
@@ -26,7 +40,7 @@ const ImageCarosel = ({ images }) => {
                 src={src}
                 alt={alt}
                 onClick={() => setCenterImageIndex(index)}
-                center={index === centerImageIndex}
+                center={index === centerImage}
               />
             );
           })}
@@ -42,7 +56,7 @@ const ImageCarosel = ({ images }) => {
       <div className="fade--left" />
       <CarouselButtons
         numImages={images.length}
-        currentSelectedIndex={centerImageIndex}
+        currentSelectedIndex={centerImage}
         onClick={setCenterImageIndex}
       />
     </Wrapper>
