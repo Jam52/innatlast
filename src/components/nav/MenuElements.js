@@ -1,10 +1,7 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-export const MenuButton = styled.div`
-  position: absolute;
-  right: 0;
-  top: 2.3rem;
+export const DefaultDropdown = styled.div`
   display: block;
   height: 1.9rem;
   width: 1.9rem;
@@ -15,9 +12,10 @@ export const MenuButton = styled.div`
   div {
     position: absolute;
     top: 50%;
-    height: 2px;
+    height: 3px;
     width: 100%;
-    background-color: white;
+    background-color: ${({ color }) =>
+      color === 'accent' ? 'var(--accent)' : 'white'};
     border-radius: 20px;
     transform-origin: 50% 50%;
   }
@@ -29,7 +27,13 @@ export const MenuButton = styled.div`
   div:last-child {
     transform: rotate(-45deg);
   }
+`;
 
+export const MenuButton = styled(DefaultDropdown)`
+  position: absolute;
+  right: 0;
+
+  top: 2.3rem;
   @media (min-width: 786px) {
     display: none;
   }

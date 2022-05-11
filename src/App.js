@@ -3,7 +3,7 @@ import { DefaultButton } from './components/buttons';
 import Header from './components/Header';
 import LandingPage from './views/LandingPage';
 import RoomPage from './views/RoomPage';
-import roomDetails from './components/roomDetails.json';
+import roomDetails from './views/roomDetails.json';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 
