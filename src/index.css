@@ -9,6 +9,8 @@
 
 /* Util */
 --gradient-light: linear-gradient(to bottom, var(--primary), transparent);
+--gradient-light-right: linear-gradient(to right, var(--primary), transparent);
+--gradient-light-left: linear-gradient(to left, var(--primary), transparent);
 --gradient-white: linear-gradient(to bottom, white, transparent);
 --box-shadow: 5px 5px 7px rgba(0,0,0,0.3);
 
@@ -186,10 +188,6 @@ h3, .h3 {
 
 
 
-
-
-
-
 @media (min-width: 786px) {
   .space {
     flex-direction: row;
@@ -204,6 +202,10 @@ h3, .h3 {
 @media (min-width: 1800px) {
   body {
     font-size: 1.3rem;
+  }
+
+  .flow--md > * + * {
+    margin-top: 4rem;
   }
   
 }
