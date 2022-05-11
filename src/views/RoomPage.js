@@ -57,8 +57,6 @@ const Wrapper = styled.main`
 
   .image-carousel {
     padding: 4rem 0;
-    overflow: hidden;
-    height: 100vmin;
   }
 `;
 

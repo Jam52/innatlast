@@ -4,36 +4,41 @@ import { useState } from 'react';
 const ImageCarosel = ({ images }) => {
   const [centerImageIndex, setCenterImageIndex] = useState(0);
 
-  console.log(-55 + centerImageIndex * 70);
   return (
-    <Wrapper translate={centerImageIndex * 71}>
+    <Wrapper centerImageIndex={centerImageIndex} numImages={images.length + 2}>
       <div className="fade" />
-      <div className="inner">
-        <CarouselImage
-          className="image"
-          src={images[images.length - 1].src}
-          alt=""
-          onClick={() => setCenterImageIndex(images.length - 1)}
-        />
-        {images.map(({ src, alt }, index) => {
-          console.log(`index: ${index} centerIndex: ${centerImageIndex}`);
-          return (
-            <CarouselImage
-              className="image"
-              src={src}
-              alt={alt}
-              onClick={() => setCenterImageIndex(index)}
-              center={index === centerImageIndex}
-            />
-          );
-        })}
-        <CarouselImage
-          className="image"
-          src={images[0].src}
-          alt=""
-          onClick={() => setCenterImageIndex(0)}
-        />
+      <div className="outter">
+        <div className="inner">
+          <CarouselImage
+            numImages={images.length + 2}
+            className="image"
+            src={images[images.length - 1].src}
+            alt=""
+            onClick={() => setCenterImageIndex(images.length - 1)}
+          />
+          {images.map(({ src, alt }, index) => {
+            console.log(`index: ${index} centerIndex: ${centerImageIndex}`);
+            return (
+              <CarouselImage
+                numImages={images.length + 2}
+                className="image"
+                src={src}
+                alt={alt}
+                onClick={() => setCenterImageIndex(index)}
+                center={index === centerImageIndex}
+              />
+            );
+          })}
+          <CarouselImage
+            numImages={images.length + 2}
+            className="image"
+            src={images[0].src}
+            alt=""
+            onClick={() => setCenterImageIndex(0)}
+          />
+        </div>
       </div>
+
       <div className="fade--left" />
     </Wrapper>
   );
@@ -41,22 +46,28 @@ const ImageCarosel = ({ images }) => {
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 100%;
   position: relative;
 
-  .inner {
+  .outter {
     width: 100%;
-    height: 100%;
+    overflow: hidden;
+  }
+
+  .inner {
+    width: ${({ numImages }) => `${numImages * 100}%`};
     transition: all 0.3s;
     display: flex;
-    transform: ${({ translate }) => `translateX(-${translate + 57}%)`};
+    transform: ${({ numImages, centerImageIndex }) =>
+      `translateX(-${
+        100 / numImages + (100 / numImages) * centerImageIndex
+      }%)`};
   }
 
-  .inner > * {
-    margin-left: 1%;
-  }
+  /* .inner > * {
+  } */
 
   .fade {
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -67,6 +78,7 @@ const Wrapper = styled.div`
     pointer-events: none;
   }
   .fade--left {
+    display: none;
     position: absolute;
     top: 0;
     right: 0;
@@ -76,14 +88,29 @@ const Wrapper = styled.div`
     background: var(--gradient-light-left);
     pointer-events: none;
   }
+
+  @media (min-width: 786px) {
+    .inner {
+      width: ${({ numImages }) => `${numImages * 70}%`};
+      transform: ${({ numImages, centerImageIndex }) =>
+        `translateX(-${
+          (100 / numImages) * 0.77 + (100 / numImages) * centerImageIndex
+        }%)`};
+    }
+
+    .fade {
+      display: block;
+    }
+    .fade--left {
+      display: block;
+    }
+  }
 `;
 
 const CarouselImage = styled.img`
-  display: block;
-  width: 70%;
-  height: 100%;
   object-fit: cover;
-
+  width: ${({ numImages }) => `${100 / numImages}%`};
+  flex-shrink: 1;
   ${({ center }) =>
     center
       ? css`
@@ -91,8 +118,8 @@ const CarouselImage = styled.img`
         `
       : css`
           cursor: pointer;
-          opacity: 0.7;
-        `}
+          opacity: 0.5;
+        `};
 `;
 
 export default ImageCarosel;
