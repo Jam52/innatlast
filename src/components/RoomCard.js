@@ -26,7 +26,7 @@ const RoomCard = (props) => {
 const Wrapper = styled.article`
   clip-path: polygon(8vh 0%, 100% 0%, 100% 100%, 0% 100%, 0% 8vh);
   width: 100%;
-  max-width: 25rem;
+  max-width: 18rem;
   margin: auto;
   background: white;
   transition: all 1s;
@@ -66,6 +66,7 @@ const Wrapper = styled.article`
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    color: var(--dark);
     img {
       width: 2rem;
     }
