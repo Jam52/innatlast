@@ -133,6 +133,11 @@ h3, .h3 {
   row-gap: 3rem;
 }
 
+.btn--image {
+  border: none;
+  background: none;
+}
+
 
 
 /* Layout */

@@ -6,6 +6,7 @@ import RoomPage from './views/RoomPage';
 import roomDetails from './views/roomDetails.json';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import AvailabilityPage from './views/AvailabilityPage';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           path="/honeymoon"
           element={<RoomPage room={roomDetails.honeymoon} />}
         />
+        <Route path="/availability" element={<AvailabilityPage />} />
       </Routes>
       <Footer />
     </div>
