@@ -6,7 +6,6 @@ const dayjs = require('dayjs');
 
 const Calendar = (props) => {
   const [availability, setAvailability] = useState({ tribe: [] });
-  const [date, changeDate] = useState(props.initialDate);
 
   useEffect(() => {
     const getDates = async () => {
@@ -21,8 +20,8 @@ const Calendar = (props) => {
     getDates();
   }, []);
 
-  let firstDayOfMonth = Number(date.date(1).format('d'));
-  let numDaysInMonth = date.daysInMonth();
+  let firstDayOfMonth = Number(props.initialDate.date(1).format('d'));
+  let numDaysInMonth = props.initialDate.daysInMonth();
 
   const isDateUnAvailable = (date, lodifyData) => {
     const availableDates = lodifyData?.filter(
@@ -43,10 +42,10 @@ const Calendar = (props) => {
 
   let daysInMonth = [...Array(42).keys()].map((key) => {
     key = key - firstDayOfMonth;
-    let day = date.date(1).add(key, 'day');
+    let day = props.initialDate.date(1).add(key, 'day');
     let isCurrentMonth = true;
     if (key + 1 <= 0) {
-      day = date.date(1).subtract(Math.abs(key), 'day');
+      day = props.initialDate.date(1).subtract(Math.abs(key), 'day');
       isCurrentMonth = false;
     }
     if (key + 1 > numDaysInMonth) {
@@ -67,7 +66,7 @@ const Calendar = (props) => {
 
   return (
     <Wrapper>
-      <h4>{date.format('MMM-YYYY')}</h4>
+      <h4>{props.initialDate.format('MMM-YYYY')}</h4>
       <table className="calendar">
         <thead>
           <tr className="weekdays">

@@ -166,6 +166,11 @@ h3, .h3 {
   margin-top: 1rem;
 }
 
+.flow--between {
+  justify-content: space-between;
+}
+
+
 .flow--sm > * + * {
   margin-top: 0.5rem;
 }
@@ -185,6 +190,10 @@ h3, .h3 {
 
 .hflow > * + * {
   margin-left: 1rem;
+}
+
+.hflow--between {
+  justify-content: space-between;
 }
 
 .space {
