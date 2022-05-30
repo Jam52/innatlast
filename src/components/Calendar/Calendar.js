@@ -46,7 +46,11 @@ const Calendar = (props) => {
         onClick={() => {
           props.handleDateSelect(day, availability, dateIsUnavailable);
         }}
-        selectedDates={props.selectedDates}
+        isSelected={props.selectedDates.some((date) => date.isSame(day))}
+        isBetweenSelected={
+          day.isAfter(props.selectedDates[0]) &&
+          day.isBefore(props.selectedDates[1])
+        }
       />
     );
   });

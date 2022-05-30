@@ -31,12 +31,28 @@ const AvailabilityPage = (props) => {
 
   const handleDateSelect = (date, lodifyRoomData, isDateUnAvailable) => {
     if (isDateUnAvailable) return;
+    const dateIsAlreadySelected = selectedDates.some((selectedDate) =>
+      date.isSame(selectedDate),
+    );
+    if (dateIsAlreadySelected) {
+      const dates = selectedDates.filter(
+        (selectedDate) => !selectedDate.isSame(date),
+      );
+      console.log(dates);
+      setSelectedDates([...dates]);
+      return;
+    }
 
     if (selectedDates.length === 0) {
       setSelectedDates([date]);
       return;
     }
+
     let newDates = [...selectedDates, date];
+
+    if (newDates.length > 2) {
+      newDates = [newDates[0], newDates[2]];
+    }
     newDates = newDates.sort((a, b) => {
       if (a.isBefore(b)) {
         return -1;
@@ -46,9 +62,6 @@ const AvailabilityPage = (props) => {
       }
       return 0;
     });
-    if (newDates.length > 2) {
-      newDates = [newDates[0], newDates[2]];
-    }
     const minimumStay = 2;
     const datesValid = isSelectedDatesValid(
       newDates,
@@ -153,6 +166,7 @@ const AvailabilityPage = (props) => {
                 selectedRoom={selectedRoom}
                 initialDate={displayDate.add(1, 'month')}
                 handleDateSelect={handleDateSelect}
+                selectedDates={selectedDates}
               />
             </div>
           </div>
