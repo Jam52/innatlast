@@ -7,11 +7,25 @@ export const isSelectedDatesValid = (
   minimumStay,
   lodgifyAvailabilityData,
 ) => {
-  if (selectedDates[1].isBefore(selectedDates[0].add(2, 'day'))) {
+  if (selectedDates[1].isBefore(selectedDates[0].add(minimumStay, 'day'))) {
     alert('Minimum 2 nights stay.');
     return false;
   }
+  const unavailablePeriods = lodgifyAvailabilityData.filter(
+    (period) => !period.is_available,
+  );
 
+  const doesContainUnavilablePeriod = unavailablePeriods.some((period) => {
+    const start = dayjs(period.period_start);
+    const end = dayjs(period.period_end);
+    if (start.isAfter(selectedDates[0]) && end.isBefore(selectedDates[1]))
+      return true;
+    return false;
+  });
+  if (doesContainUnavilablePeriod) {
+    alert('Must not contain unavilable dates.');
+    return false;
+  }
   return true;
 };
 

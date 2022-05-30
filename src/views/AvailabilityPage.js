@@ -29,7 +29,7 @@ const AvailabilityPage = (props) => {
     setDisplayDate(displayDate.subtract(1, 'M'));
   };
 
-  const handleDateSelect = (date, lodifyData, isDateUnAvailable) => {
+  const handleDateSelect = (date, lodifyRoomData, isDateUnAvailable) => {
     if (isDateUnAvailable) return;
 
     if (selectedDates.length === 0) {
@@ -49,7 +49,12 @@ const AvailabilityPage = (props) => {
     if (newDates.length > 2) {
       newDates = [newDates[0], newDates[2]];
     }
-    const datesValid = isSelectedDatesValid(newDates);
+    const minimumStay = 2;
+    const datesValid = isSelectedDatesValid(
+      newDates,
+      minimumStay,
+      lodifyRoomData[selectedRoom],
+    );
     if (datesValid) {
       setSelectedDates(newDates);
     }
