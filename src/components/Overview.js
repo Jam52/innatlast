@@ -52,7 +52,7 @@ const Wrapper = styled.section`
             margin-right: 10vw;
           `
         : css`
-            margin-left: 10vw;
+            margin-left: 15vw;
           `}
   }
 

@@ -10,6 +10,7 @@ export const DefaultButton = styled.button`
   transition: all 0.2s;
   font-family: var(--font-title);
   max-width: 15rem;
+  min-width: 10rem;
   &:hover {
     background-color: var(--dark);
   }

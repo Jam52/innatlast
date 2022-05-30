@@ -53,6 +53,9 @@ const Navbar = (props) => {
         <DefaultLink to="/about" onClick={() => toggleOpen(!isOpen)}>
           About Us
         </DefaultLink>
+        <DefaultLink to="/availability" onClick={() => toggleOpen(!isOpen)}>
+          Availability
+        </DefaultLink>
         <NavLink to="/">
           <img
             className="logo-house"
