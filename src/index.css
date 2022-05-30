@@ -186,14 +186,16 @@ h3, .h3 {
 .hflow {
   display: flex;
   align-items: center;
+  width:100%;
+  gap:1rem;
 }
 
-.hflow > * + * {
-  margin-left: 1rem;
-}
 
 .hflow--between {
   justify-content: space-between;
+}
+.hflow--around {
+  justify-content: space-around;
 }
 
 .space {

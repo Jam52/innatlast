@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { fetchLodgifyAvailabilityData } from '../../services/lodgifyApi';
 import { useEffect, useState } from 'react';
 import CalendarDate from './CalendarDate';
-const dayjs = require('dayjs');
+import { isDateUnAvailable } from './dateSelectLogic';
 
 const Calendar = (props) => {
   const [availability, setAvailability] = useState({ tribe: [] });
@@ -23,26 +23,13 @@ const Calendar = (props) => {
   let firstDayOfMonth = Number(props.initialDate.date(1).format('d'));
   let numDaysInMonth = props.initialDate.daysInMonth();
 
-  const isDateUnAvailable = (date, lodifyData) => {
-    const availableDates = lodifyData?.filter(
-      (bookingPeriod) => bookingPeriod.is_available,
-    );
-    return availableDates?.every((booking) => {
-      const startDate = dayjs(booking.period_start);
-      const endDate = dayjs(booking.period_end);
-      if (date.isSame(startDate, 'day') || date.isSame(endDate, 'day')) {
-        return false;
-      }
-      if (date.isAfter(startDate, 'day') && date.isBefore(endDate, 'day')) {
-        return false;
-      }
-      return true;
-    });
-  };
-
   let daysInMonth = [...Array(42).keys()].map((key) => {
     key = key - firstDayOfMonth;
     let day = props.initialDate.date(1).add(key, 'day');
+    const dateIsUnavailable = isDateUnAvailable(
+      day,
+      availability[props.selectedRoom],
+    );
     let isCurrentMonth = true;
     if (key + 1 <= 0) {
       day = props.initialDate.date(1).subtract(Math.abs(key), 'day');
@@ -53,58 +40,83 @@ const Calendar = (props) => {
     }
     return (
       <CalendarDate
-        addData={() => 'clicked'}
         dateNum={day.date()}
         isCurrentMonth={isCurrentMonth}
-        isUnAvailable={isDateUnAvailable(day, availability[props.selectedRoom])}
+        isUnAvailable={dateIsUnavailable}
         onClick={() => {
-          console.log('clicked');
+          props.handleDateSelect(day, availability, dateIsUnavailable);
         }}
+        selectedDates={props.selectedDates}
       />
     );
   });
 
   return (
-    <Wrapper>
+    <Wrapper className="flow">
       <h4>{props.initialDate.format('MMM-YYYY')}</h4>
-      <table className="calendar">
-        <thead>
-          <tr className="weekdays">
-            <th>s</th>
-            <th>m</th>
-            <th>t</th>
-            <th>w</th>
-            <th>t</th>
-            <th>f</th>
-            <th>s</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>{daysInMonth.slice(0, 7)}</tr>
-          <tr>{daysInMonth.slice(7, 14)}</tr>
-          <tr>{daysInMonth.slice(14, 21)}</tr>
-          <tr>{daysInMonth.slice(21, 28)}</tr>
-          <tr>{daysInMonth.slice(28, 35)}</tr>
-          <tr>{daysInMonth.slice(35, 42)}</tr>
-        </tbody>
-      </table>
+      <div className="calendar">
+        <ul className="weekdays hflow hflow--between">
+          <p>s</p>
+          <p>m</p>
+          <p>t</p>
+          <p>w</p>
+          <p>t</p>
+          <p>f</p>
+          <p>s</p>
+        </ul>
+
+        <div className="flow">
+          <ul className="dates hflow hflow--between">
+            {daysInMonth.slice(0, 7)}
+          </ul>
+          <ul className="dates hflow hflow--between">
+            {daysInMonth.slice(7, 14)}
+          </ul>
+          <ul className="dates hflow hflow--between">
+            {daysInMonth.slice(14, 21)}
+          </ul>
+          <ul className="dates hflow hflow--between">
+            {daysInMonth.slice(21, 28)}
+          </ul>
+          <ul className="dates hflow hflow--between">
+            {daysInMonth.slice(28, 35)}
+          </ul>
+          <ul className="dates hflow hflow--between">
+            {daysInMonth.slice(35, 42)}
+          </ul>
+        </div>
+      </div>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
   background-color: white;
-  padding: 1rem;
-  width: 100%;
-  max-width: 30rem;
+  padding: 1rem 2rem;
   text-align: center;
+  width: 100%;
+  max-width: 40rem;
+  margin: auto;
+  z-index: 5;
+
   .calendar {
     width: 100%;
   }
 
+  .dates {
+    margin: 0;
+    padding: 0;
+  }
+
+  .weekdays {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
   .weekdays > * {
-    height: 4rem;
-    width: 4rem;
+    width: 2rem;
+    font-weight: 700;
   }
 `;
 
