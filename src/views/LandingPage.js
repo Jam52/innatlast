@@ -3,6 +3,7 @@ import Divider from '../components/Divider';
 import RoomCard from '../components/RoomCard';
 import Overview from '../components/Overview';
 import { Link } from 'react-router-dom';
+import IntaFeed from '../components/InstaFeed';
 
 const LandingPage = (props) => {
   return (
@@ -90,6 +91,15 @@ const LandingPage = (props) => {
               elementum varius.
             </p>
           </div>
+          <div className="hflow">
+            <img
+              src="/images/insta_accent.svg"
+              alt="instgram"
+              className="icon"
+            />
+            <h2>#inAtLast</h2>
+          </div>
+          <IntaFeed />
         </div>
       </div>
       <Overview
