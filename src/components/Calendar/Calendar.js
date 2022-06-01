@@ -110,6 +110,7 @@ const Wrapper = styled.div`
   .dates {
     margin: 0;
     padding: 0;
+    gap: 0;
   }
 
   .weekdays {
