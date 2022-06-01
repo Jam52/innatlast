@@ -92,6 +92,11 @@ const LandingPage = (props) => {
             </p>
           </div>
           <div className="hflow">
+            <img
+              src="/images/insta_accent.svg"
+              alt="instgram"
+              className="icon"
+            />
             <h2>#inAtLast</h2>
           </div>
           <IntaFeed />
