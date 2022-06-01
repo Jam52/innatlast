@@ -11,8 +11,31 @@ const Wrapper = styled.button`
   background: none;
   text-align: center;
   opacity: ${({ isCurrentMonth }) => (!isCurrentMonth ? 0.4 : 1)};
-  background-image: ${({ isUnAvailable }) =>
-    isUnAvailable ? 'url(/images/calendar_unavailable.svg)' : ''};
+
+  ${({ isUnAvailable }) =>
+    isUnAvailable
+      ? css`
+          background-image: url(/images/calendar_unavailable.svg);
+        `
+      : ''};
+
+  ${({ isSelected }) =>
+    isSelected
+      ? css`
+          background-image: url(/images/calendar_selected.svg);
+          color: white;
+          opacity: 1;
+        `
+      : ''};
+  ${({ isBetweenSelected }) =>
+    isBetweenSelected
+      ? css`
+          background-image: url(/images/calendar_selected.svg);
+          opacity: 0.5;
+          color: white;
+        `
+      : ''};
+
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;

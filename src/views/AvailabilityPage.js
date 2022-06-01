@@ -29,14 +29,29 @@ const AvailabilityPage = (props) => {
     setDisplayDate(displayDate.subtract(1, 'M'));
   };
 
-  const handleDateSelect = (date, lodifyData, isDateUnAvailable) => {
+  const handleDateSelect = (date, lodifyRoomData, isDateUnAvailable) => {
     if (isDateUnAvailable) return;
+    const dateIsAlreadySelected = selectedDates.some((selectedDate) =>
+      date.isSame(selectedDate),
+    );
+    if (dateIsAlreadySelected) {
+      const dates = selectedDates.filter(
+        (selectedDate) => !selectedDate.isSame(date),
+      );
+      setSelectedDates([...dates]);
+      return;
+    }
 
     if (selectedDates.length === 0) {
       setSelectedDates([date]);
       return;
     }
+
     let newDates = [...selectedDates, date];
+
+    if (newDates.length > 2) {
+      newDates = [newDates[0], newDates[2]];
+    }
     newDates = newDates.sort((a, b) => {
       if (a.isBefore(b)) {
         return -1;
@@ -46,10 +61,12 @@ const AvailabilityPage = (props) => {
       }
       return 0;
     });
-    if (newDates.length > 2) {
-      newDates = [newDates[0], newDates[2]];
-    }
-    const datesValid = isSelectedDatesValid(newDates);
+    const minimumStay = 2;
+    const datesValid = isSelectedDatesValid(
+      newDates,
+      minimumStay,
+      lodifyRoomData[selectedRoom],
+    );
     if (datesValid) {
       setSelectedDates(newDates);
     }
@@ -93,13 +110,7 @@ const AvailabilityPage = (props) => {
       <div className="calendar-background">
         <div className="overlay" />
         <div className="container">
-          <div className="hflow hflow--between ">
-            <button
-              className="btn--image test"
-              onClick={() => handleDisplayDateChange(false)}
-            >
-              <img src="/images/arrow2.svg" alt="" className="arrow"></img>
-            </button>
+          <div className="hflow hflow--between selected-dates-container">
             <div className="hflow test selected-dates">
               <p className="from-to">From:</p>
               <p>
@@ -125,6 +136,13 @@ const AvailabilityPage = (props) => {
               </button>
             </div>
             <button
+              className="btn--image test"
+              onClick={() => handleDisplayDateChange(false)}
+            >
+              <img src="/images/arrow2.svg" alt="" className="arrow"></img>
+            </button>
+            <div className="space" />
+            <button
               className="btn--image"
               onClick={() => handleDisplayDateChange(true)}
             >
@@ -148,6 +166,7 @@ const AvailabilityPage = (props) => {
                 selectedRoom={selectedRoom}
                 initialDate={displayDate.add(1, 'month')}
                 handleDateSelect={handleDateSelect}
+                selectedDates={selectedDates}
               />
             </div>
           </div>
@@ -198,9 +217,30 @@ const Wrapper = styled.section`
     z-index: 0;
   }
 
+  .selected-dates-container {
+    display: grid;
+    grid-template-areas:
+      'dates dates dates'
+      'arrowLeft space arrowRight';
+    grid-template-columns: auto 1fr auto;
+  }
+
   .selected-dates {
     width: auto;
+    grid-area: dates;
+    justify-content: space-between;
+    gap: 0.2rem;
   }
+
+  .arrow {
+    height: 2rem;
+    grid-area: arrowleft;
+  }
+  .arrow--right {
+    transform: rotate(180deg);
+    grid-area: arrowRight;
+  }
+
   .from-to {
     font-weight: 700;
   }
@@ -223,13 +263,6 @@ const Wrapper = styled.section`
     z-index: 5;
   }
 
-  .arrow {
-    height: 2rem;
-  }
-  .arrow--right {
-    transform: rotate(180deg);
-  }
-
   .button-container {
     display: flex;
     flex-direction: column;
@@ -240,6 +273,13 @@ const Wrapper = styled.section`
 
   .button-container > * + * {
     margin: 1rem 0 0 0;
+  }
+
+  @media (min-width: 600px) {
+    .selected-dates {
+      justify-content: center;
+      gap: 1rem;
+    }
   }
 
   @media (min-width: 900px) {

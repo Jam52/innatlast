@@ -46,7 +46,11 @@ const Calendar = (props) => {
         onClick={() => {
           props.handleDateSelect(day, availability, dateIsUnavailable);
         }}
-        selectedDates={props.selectedDates}
+        isSelected={props.selectedDates.some((date) => date.isSame(day))}
+        isBetweenSelected={
+          day.isAfter(props.selectedDates[0]) &&
+          day.isBefore(props.selectedDates[1])
+        }
       />
     );
   });
@@ -106,6 +110,7 @@ const Wrapper = styled.div`
   .dates {
     margin: 0;
     padding: 0;
+    gap: 0;
   }
 
   .weekdays {
