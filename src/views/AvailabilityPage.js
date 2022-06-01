@@ -38,7 +38,6 @@ const AvailabilityPage = (props) => {
       const dates = selectedDates.filter(
         (selectedDate) => !selectedDate.isSame(date),
       );
-      console.log(dates);
       setSelectedDates([...dates]);
       return;
     }
@@ -111,13 +110,7 @@ const AvailabilityPage = (props) => {
       <div className="calendar-background">
         <div className="overlay" />
         <div className="container">
-          <div className="hflow hflow--between ">
-            <button
-              className="btn--image test"
-              onClick={() => handleDisplayDateChange(false)}
-            >
-              <img src="/images/arrow2.svg" alt="" className="arrow"></img>
-            </button>
+          <div className="hflow hflow--between selected-dates-container">
             <div className="hflow test selected-dates">
               <p className="from-to">From:</p>
               <p>
@@ -142,6 +135,13 @@ const AvailabilityPage = (props) => {
                 />
               </button>
             </div>
+            <button
+              className="btn--image test"
+              onClick={() => handleDisplayDateChange(false)}
+            >
+              <img src="/images/arrow2.svg" alt="" className="arrow"></img>
+            </button>
+            <div className="space" />
             <button
               className="btn--image"
               onClick={() => handleDisplayDateChange(true)}
@@ -217,9 +217,30 @@ const Wrapper = styled.section`
     z-index: 0;
   }
 
+  .selected-dates-container {
+    display: grid;
+    grid-template-areas:
+      'dates dates dates'
+      'arrowLeft space arrowRight';
+    grid-template-columns: auto 1fr auto;
+  }
+
   .selected-dates {
     width: auto;
+    grid-area: dates;
+    justify-content: space-between;
+    gap: 0.2rem;
   }
+
+  .arrow {
+    height: 2rem;
+    grid-area: arrowleft;
+  }
+  .arrow--right {
+    transform: rotate(180deg);
+    grid-area: arrowRight;
+  }
+
   .from-to {
     font-weight: 700;
   }
@@ -242,13 +263,6 @@ const Wrapper = styled.section`
     z-index: 5;
   }
 
-  .arrow {
-    height: 2rem;
-  }
-  .arrow--right {
-    transform: rotate(180deg);
-  }
-
   .button-container {
     display: flex;
     flex-direction: column;
@@ -259,6 +273,13 @@ const Wrapper = styled.section`
 
   .button-container > * + * {
     margin: 1rem 0 0 0;
+  }
+
+  @media (min-width: 600px) {
+    .selected-dates {
+      justify-content: center;
+      gap: 1rem;
+    }
   }
 
   @media (min-width: 900px) {
