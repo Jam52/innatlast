@@ -48,13 +48,16 @@ html {
 
 p, h1, h2, h3, h4, h5, h6 {
   margin: 0;
-  text-transform: capitalize;
 }
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   font-weight: 600;
+  text-transform: capitalize;
 }
 
+a {
+  color: var(--dark);
+}
 
 h1, .h1 {
   font-size: 2.2rem;
@@ -129,7 +132,8 @@ h3, .h3 {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  column-gap: 5rem;
+  grid-template-rows: 1fr;
+  column-gap: 4rem;
   row-gap: 3rem;
 }
 
@@ -140,6 +144,10 @@ h3, .h3 {
 
 .icon {
   height: 2rem;
+}
+
+.icon--sm {
+  height: 1.2rem;
 }
 
 
@@ -183,7 +191,7 @@ h3, .h3 {
 }
 
 .flow--lg  {
-  gap: 6rem;
+  gap: 4rem;
 }
 
 .hflow {

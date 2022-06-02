@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import Divider from '../components/Divider';
-import { DefaultButton } from '../components/buttons';
+import { DefaultButton, SelectedableButton } from '../components/buttons';
 import Calendar from '../components/Calendar/Calendar';
 import { isSelectedDatesValid } from '../components/Calendar/dateSelectLogic';
 const dayjs = require('dayjs');
@@ -87,24 +87,24 @@ const AvailabilityPage = (props) => {
         </div>
       </div>
       <div className="button-container space container">
-        <ButtonWrapper
+        <SelectedableButton
           selected={selectedRoom === 'journey'}
           onClick={() => setSelectedRoom('journey')}
         >
           The Journey
-        </ButtonWrapper>
-        <ButtonWrapper
+        </SelectedableButton>
+        <SelectedableButton
           selected={selectedRoom === 'tribe'}
           onClick={() => setSelectedRoom('tribe')}
         >
           The Tribe
-        </ButtonWrapper>
-        <ButtonWrapper
+        </SelectedableButton>
+        <SelectedableButton
           selected={selectedRoom === 'honeymoon'}
           onClick={() => setSelectedRoom('honeymoon')}
         >
           The Honeymoon
-        </ButtonWrapper>
+        </SelectedableButton>
       </div>
 
       <div className="calendar-background">
@@ -187,11 +187,6 @@ const AvailabilityPage = (props) => {
     </Wrapper>
   );
 };
-
-const ButtonWrapper = styled(DefaultButton)`
-  width: 15rem;
-  background-color: ${({ selected }) => (selected ? 'var(--dark)' : null)};
-`;
 
 const Wrapper = styled.section`
   padding-top: 8rem;

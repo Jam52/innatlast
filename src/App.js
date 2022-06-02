@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import AvailabilityPage from './views/AvailabilityPage';
 import EventPage from './views/EventPage';
+import CountyPage from './views/CountyPage';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         />
         <Route path="/availability" element={<AvailabilityPage />} />
         <Route path="/events" element={<EventPage />} />
+        <Route path="/county" element={<CountyPage />} />
       </Routes>
       <Footer />
     </div>

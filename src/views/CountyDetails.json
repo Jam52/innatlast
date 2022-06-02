@@ -1,0 +1,88 @@
+{
+  "thingsToDo": [
+    {
+      "header": "Farms to Explore",
+      "textShort": "Explore lavender fields, sunflower fields and sustainable farms.",
+      "textLong": "",
+      "image": "lavender.jpg",
+      "imageAlt": "girl walking in lavender farm in prince edward county"
+    },
+    {
+      "header": "Antique Shops",
+      "textShort": "Hunt for treasures at the County’s many antique shops.",
+      "textLong": "",
+      "image": "antiques.jpg",
+      "imageAlt": "old antiques shop in prince edward county"
+    },
+    {
+      "header": "Wineries, cideries and Breweies",
+      "textShort": "There are over 40 wineries in the county, craft breweries and cideries are many.",
+      "textLong": "",
+      "image": "wine.jpg",
+      "imageAlt": "winery on a sunny day in prince edward county"
+    },
+    {
+      "header": "Amazing Sunsets",
+      "textShort": "The county has incredible sunsets, so hit the beach in the evening for a picnic dinner and watch the sunset.",
+      "textLong": "",
+      "image": "sunset.jpg",
+      "imageAlt": "incredable sunset in prince edward county"
+    },
+    {
+      "header": "Fantastic Resturants",
+      "textShort": "Dine at the restaurants and eateries in Picton, Wellington or Bloomfield.",
+      "textLong": "",
+      "image": "food.jpg",
+      "imageAlt": "great food in prince edward county"
+    },
+    {
+      "header": "Shops and Galleries",
+      "textShort": "PEC has a very strong creative vibe, lots of galleries, display shops and a numerous.",
+      "textLong": "",
+      "image": "art.jpg",
+      "imageAlt": "art galleries and shops in prince edward county"
+    }
+  ],
+  "placesToGo": [
+    {
+      "header": "Sandunes",
+      "textShort": "Climb the world-famous white sand dunes at Sandbanks Provincial Park and take in the views.",
+      "textLong": "",
+      "image": "sand.jpg",
+      "imageAlt": "sanddune on sunny day in prince edward county",
+      "map": ""
+    },
+    {
+      "header": "Sandbanks Beach",
+      "textShort": "Relax and take a dip at Sandbanks Beach, Lakeshore Beach or Outlet Beach.",
+      "textLong": "",
+      "image": "sandbanks.jpg",
+      "imageAlt": "sandbanks park on a sunny day in prince edward county",
+      "map": "https://www.google.com/maps/place/Sandbanks+Provincial+Park./@43.9070266,-77.2392234,15z/data=!4m5!3m4!1s0x0:0x714390535028f922!8m2!3d43.9070266!4d-77.2392234"
+    },
+    {
+      "header": "Little Bluff Conservation",
+      "textShort": "There are over 40 wineries in the county, craft breweries and cideries are many.",
+      "textLong": "",
+      "image": "bluff.jpg",
+      "imageAlt": "Little Bluff Conservation",
+      "map": "https://www.google.com/maps/place/Little+Bluff+Conservation+Area/@43.9308142,-76.9943379,17z/data=!3m1!4b1!4m5!3m4!1s0x89d7b83ebe75abe1:0xcf944bbd3a01e828!8m2!3d43.9308142!4d-76.9921492"
+    },
+    {
+      "header": "Bird Observatory",
+      "textShort": "Take a drive down Long Point Road, stop by the beach or the Prince Edward Point Bird Observatory.",
+      "textLong": "",
+      "image": "bird.jpg",
+      "imageAlt": "Bird Observatory in prince edward county",
+      "map": "https://www.google.com/maps/place/Prince+Edward+Point+Bird+Observatory/@43.9396357,-76.8633978,17z/data=!3m1!4b1!4m5!3m4!1s0x89d7bf87dd17c1df:0x1dd549fb4489e870!8m2!3d43.9396463!4d-76.8611738"
+    },
+    {
+      "header": "Lake on a Mountain",
+      "textShort": "Considered somewhat of an anomaly, as no one has yet discovered its source, the Lake on the Mountain is a must-visit.",
+      "textLong": "",
+      "image": "lake.jpg",
+      "imageAlt": "great food in prince edward county",
+      "map": "https://www.google.com/maps/place/Lake+on+the+Mountain+Provincial+Park/@44.0344035,-77.069967,15z/data=!4m9!1m2!2m1!1slake+on+a+mountain!3m5!1s0x89d7c92bec1542d9:0x4ea736b2082df060!8m2!3d44.0398731!4d-77.0560405!15sChJsYWtlIG9uIGEgbW91bnRhaW5aEiIQbGFrZSBvbiBtb3VudGFpbpIBBHBhcms"
+    }
+  ]
+}
