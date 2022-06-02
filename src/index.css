@@ -174,15 +174,15 @@ h3, .h3 {
 }
 
 
-.flow--sm > * + * {
+.flow--sm  {
   gap: 0.5rem;
 }
 
-.flow--md > * + * {
+.flow--md  {
   gap: 2rem;
 }
 
-.flow--lg > * + * {
+.flow--lg  {
   gap: 6rem;
 }
 

@@ -8,8 +8,37 @@
     ],
     "maxOccupancy": "2 Adults",
     "perNightRate": 395,
-    "roomDetails": [],
-    "whatsIncluded": []
+    "roomDetails": [
+      { "text": "bright & relaxing", "image": "bright.svg" },
+      { "text": "cozy Queen size bed", "image": "bed.svg" },
+      { "text": "overlooking a vineyard and bay", "image": "view.svg" },
+      { "text": "private terrace", "image": "terrace.svg" },
+      {
+        "text": "sunrise/moonrise & sunset/moonset views",
+        "image": "view.svg"
+      },
+      {
+        "text": "ensuite shower with essentials you need for your morning and nighttime routine",
+        "image": "shower.svg"
+      },
+      {
+        "text": "Self controlled heat and air conditioning",
+        "image": "temp.svg"
+      },
+      {
+        "text": "pack and play available upon request",
+        "image": "cot.svg"
+      },
+      {
+        "text": "keyless entry",
+        "image": "key.svg"
+      },
+
+      {
+        "text": "selection of books + games",
+        "image": "games.svg"
+      }
+    ]
   },
   "tribe": {
     "title": "The Tribe",
@@ -20,8 +49,40 @@
     ],
     "maxOccupancy": "4 Adults",
     "perNightRate": 595,
-    "roomDetails": [],
-    "whatsIncluded": []
+    "roomDetails": [
+      { "text": "comfortable & bright", "image": "comfort.svg" },
+      { "text": "ideal for families or small groups", "image": "family.svg" },
+      { "text": "cozy Queen size bed", "image": "bed.svg" },
+      { "text": "bespoke triple bunk bed", "image": "bed.svg" },
+      {
+        "text": "overlooking a vineyard and bay",
+        "image": "view.svg"
+      },
+      {
+        "text": "private terrace",
+        "image": "terrace.svg"
+      },
+      {
+        "text": "sunrise/moonrise & sunset/moonset views",
+        "image": "view.svg"
+      },
+      {
+        "text": "ensuite bath with essentials you need for your morning and nighttime routine",
+        "image": "bath.svg"
+      },
+      {
+        "text": "Self controlled heat and air conditioning",
+        "image": "temp.svg"
+      },
+      {
+        "text": "keyless entry",
+        "image": "key.svg"
+      },
+      {
+        "text": "selection of books + games",
+        "image": "games.svg"
+      }
+    ]
   },
   "honeymoon": {
     "title": "The Honeymoon",
@@ -32,7 +93,46 @@
     ],
     "maxOccupancy": "2 Adults",
     "perNightRate": 495,
-    "roomDetails": [],
-    "whatsIncluded": []
+    "roomDetails": [
+      { "text": "intimate & dreamy", "image": "dreamy.svg" },
+      { "text": "cozy Queen size bed", "image": "bed.svg" },
+      {
+        "text": "overlooking a vineyard and bay",
+        "image": "view.svg"
+      },
+      {
+        "text": "in room fireplace",
+        "image": "fire.svg"
+      },
+      {
+        "text": "private terrace",
+        "image": "terrace.svg"
+      },
+      {
+        "text": "sunrise/moonrise & sunset/moonset views",
+        "image": "view.svg"
+      },
+      {
+        "text": "ensuite shower with essentials you need for your morning and nighttime routine",
+        "image": "shower.svg"
+      },
+      {
+        "text": "Self controlled heat and air conditioning",
+        "image": "temp.svg"
+      },
+      {
+        "text": "pack and play available upon request",
+        "image": "cot.svg"
+      },
+      {
+        "text": "keyless entry",
+        "image": "key.svg"
+      },
+
+      {
+        "text": "selection of books + games",
+        "image": "games.svg"
+      }
+    ]
   }
 }
