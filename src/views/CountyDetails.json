@@ -50,7 +50,7 @@
       "textLong": "",
       "image": "sand.jpg",
       "imageAlt": "sanddune on sunny day in prince edward county",
-      "map": ""
+      "map": "https://goo.gl/maps/3Rf5TK3NskZFNfAs6"
     },
     {
       "header": "Sandbanks Beach",
@@ -58,7 +58,7 @@
       "textLong": "",
       "image": "sandbanks.jpg",
       "imageAlt": "sandbanks park on a sunny day in prince edward county",
-      "map": "https://www.google.com/maps/place/Sandbanks+Provincial+Park./@43.9070266,-77.2392234,15z/data=!4m5!3m4!1s0x0:0x714390535028f922!8m2!3d43.9070266!4d-77.2392234"
+      "map": "https://goo.gl/maps/Zwuw6jzRHB74fa2R6"
     },
     {
       "header": "Little Bluff Conservation",
@@ -66,7 +66,7 @@
       "textLong": "",
       "image": "bluff.jpg",
       "imageAlt": "Little Bluff Conservation",
-      "map": "https://www.google.com/maps/place/Little+Bluff+Conservation+Area/@43.9308142,-76.9943379,17z/data=!3m1!4b1!4m5!3m4!1s0x89d7b83ebe75abe1:0xcf944bbd3a01e828!8m2!3d43.9308142!4d-76.9921492"
+      "map": "https://goo.gl/maps/R9TKJshTtqr6RZc5A"
     },
     {
       "header": "Bird Observatory",
@@ -74,7 +74,7 @@
       "textLong": "",
       "image": "bird.jpg",
       "imageAlt": "Bird Observatory in prince edward county",
-      "map": "https://www.google.com/maps/place/Prince+Edward+Point+Bird+Observatory/@43.9396357,-76.8633978,17z/data=!3m1!4b1!4m5!3m4!1s0x89d7bf87dd17c1df:0x1dd549fb4489e870!8m2!3d43.9396463!4d-76.8611738"
+      "map": "https://goo.gl/maps/HKzTRhYPcrnoNUox5"
     },
     {
       "header": "Lake on a Mountain",
@@ -82,7 +82,7 @@
       "textLong": "",
       "image": "lake.jpg",
       "imageAlt": "great food in prince edward county",
-      "map": "https://www.google.com/maps/place/Lake+on+the+Mountain+Provincial+Park/@44.0344035,-77.069967,15z/data=!4m9!1m2!2m1!1slake+on+a+mountain!3m5!1s0x89d7c92bec1542d9:0x4ea736b2082df060!8m2!3d44.0398731!4d-77.0560405!15sChJsYWtlIG9uIGEgbW91bnRhaW5aEiIQbGFrZSBvbiBtb3VudGFpbpIBBHBhcms"
+      "map": "https://goo.gl/maps/TW4bCuw1ZSq5N7Bi7"
     }
   ]
 }
