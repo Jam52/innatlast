@@ -65,7 +65,7 @@ const Wrapper = styled.article`
   .details-item {
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     color: var(--dark);
     img {
       width: 2rem;
