@@ -7,6 +7,7 @@ import roomDetails from './views/roomDetails.json';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import AvailabilityPage from './views/AvailabilityPage';
+import EventPage from './views/EventPage';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           element={<RoomPage room={roomDetails.honeymoon} />}
         />
         <Route path="/availability" element={<AvailabilityPage />} />
+        <Route path="/events" element={<EventPage />} />
       </Routes>
       <Footer />
     </div>
