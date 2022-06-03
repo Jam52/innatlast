@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import Divider from '../components/Divider';
-import { DefaultButton, SelectedableButton } from '../components/buttons';
+import { SelectedableButton } from '../components/buttons';
 import Calendar from '../components/Calendar/Calendar';
 import { isSelectedDatesValid } from '../components/Calendar/dateSelectLogic';
 const dayjs = require('dayjs');
