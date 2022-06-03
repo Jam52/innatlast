@@ -59,26 +59,36 @@ const RoomPage = ({ room }) => {
             </div>
           </div>
         </div>
-        <section className="flow">
+        <section className="flow flow--sm">
           <Dropdown header="Room details">
-            {images.map(() => (
-              <p>kasjbdkjadnakndkajsdnk</p>
-            ))}
-          </Dropdown>
-          <Dropdown header="Whats included">
-            {images.map(() => (
-              <p>kasjbdkjadnakndkajsdnk</p>
-            ))}
+            <div className="details">
+              {room.roomDetails.map((detail) => {
+                return (
+                  <div className="details-detail">
+                    <img
+                      src={`/images/${detail.image}`}
+                      alt=""
+                      className="icon"
+                    />
+                    <p>{detail.text}</p>
+                  </div>
+                );
+              })}
+            </div>
           </Dropdown>
           <Dropdown header="Rules">
-            {images.map(() => (
-              <p>kasjbdkjadnakndkajsdnk</p>
-            ))}
+            <p className="para rules">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+              lorem ipsum, cursus ac nunc id, varius bibendum dolor. Donec sit
+              amet eros eu risus dictum ultricies at at justo.
+            </p>
           </Dropdown>
           <Dropdown header="Cancellations">
-            {images.map(() => (
-              <p>kasjbdkjadnakndkajsdnk</p>
-            ))}
+            <p className="para rules">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+              lorem ipsum, cursus ac nunc id, varius bibendum dolor. Donec sit
+              amet eros eu risus dictum ultricies at at justo.
+            </p>
           </Dropdown>
         </section>
       </section>
@@ -96,6 +106,32 @@ const Wrapper = styled.main`
 
   .carousel {
     padding: 4rem 0;
+  }
+
+  .details {
+    width: 90%;
+    margin-left: auto;
+    margin-right: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 2rem;
+  }
+  .details-detail {
+    width: 15rem;
+    display: flex;
+    gap: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .rules {
+    margin-left: 3rem;
+  }
+
+  @media (min-width: 1000px) {
+    .details {
+      width: 80%;
+    }
   }
 `;
 

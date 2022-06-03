@@ -11,11 +11,12 @@ const Footer = () => {
             <h2 className="h3">Contact us.</h2>
           </div>
           <p>
-            123 Road name,
-            <br /> Picton, ON, I3N 5T9
+            InnAtLast <br />
+            3280 County Road <br /> 13 Milford, ON <br />
+            K0K 2P0
           </p>
-          <a href="tel:+1 613 111 2222">+1 613 111 2222</a>
-          <a href="mailto:info@innatlast.ca">info@innatlast.ca</a>
+          <a href="tel:+1 613 111 2222">647.866.7018</a>
+          <a href="mailto:welcome@innatlast.com">welcome@innatlast.com</a>
         </div>
         <nav className="flow flow--sm right">
           <div className="hflow right">

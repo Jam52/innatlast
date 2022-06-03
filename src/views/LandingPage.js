@@ -51,9 +51,9 @@ const LandingPage = (props) => {
               <RoomCard
                 image={{ src: 'room1.jpg', alt: '' }}
                 details={[
-                  { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
-                  { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
-                  { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
+                  { src: 'bed.svg', alt: '', text: 'Cozy Queen size bed' },
+                  { src: 'person.svg', alt: '', text: 'Max 2 Person' },
+                  { src: 'bright.svg', alt: '', text: 'Bright & Relaxing' },
                 ]}
                 title="The Journey"
               />
@@ -63,8 +63,8 @@ const LandingPage = (props) => {
                 image={{ src: 'room2.jpg', alt: '' }}
                 details={[
                   { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
-                  { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
-                  { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
+                  { src: 'person.svg', alt: '', text: 'Max 2 Person' },
+                  { src: 'dreamy.svg', alt: '', text: 'Intimate & Dreamy' },
                 ]}
                 title="The Honeymoon"
               />
@@ -73,9 +73,9 @@ const LandingPage = (props) => {
               <RoomCard
                 image={{ src: 'room3.jpg', alt: '' }}
                 details={[
-                  { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
-                  { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
-                  { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
+                  { src: 'bed.svg', alt: '', text: 'Queen Bed & Bunk Bed' },
+                  { src: 'person.svg', alt: '', text: 'Max 5 Person' },
+                  { src: 'comfort.svg', alt: '', text: 'Comfortable & Bright' },
                 ]}
                 title="The Tribe"
               />

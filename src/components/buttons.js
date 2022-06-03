@@ -15,3 +15,8 @@ export const DefaultButton = styled.button`
     background-color: var(--dark);
   }
 `;
+
+export const SelectedableButton = styled(DefaultButton)`
+  width: 15rem;
+  background-color: ${({ selected }) => (selected ? 'var(--dark)' : null)};
+`;
