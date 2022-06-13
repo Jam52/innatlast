@@ -12,7 +12,9 @@ const Footer = () => {
           </div>
           <p>
             InnAtLast <br />
-            3280 County Road <br /> 13 Milford, ON <br />
+            3280 County Road 13
+            <br />
+            Milford, ON <br />
             K0K 2P0
           </p>
           <a href="tel:+1 613 111 2222">647.866.7018</a>

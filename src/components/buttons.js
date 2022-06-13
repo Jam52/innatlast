@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const DefaultButton = styled.button`
+  letter-spacing: 0.2rem;
   background-color: var(--mid);
   padding: 0.5rem 1rem;
   color: white;
