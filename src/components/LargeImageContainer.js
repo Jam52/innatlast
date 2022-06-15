@@ -1,10 +1,27 @@
-import styled from 'styled-components';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+import styled, { css } from 'styled-components';
 
-const LargeImageContainer = ({ imageOne, imageTwo }) => {
+const LargeImageContainer = ({ imageOne, imageTwo, delay }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: '-100px',
+  });
+
+  const [isHidden, setHidden] = useState(true);
+
+  useEffect(() => {
+    if (inView) {
+      setTimeout(() => {
+        setHidden(false);
+      }, delay);
+    }
+  });
+
   const [isTop, toggleTop] = useState(true);
+
   return (
-    <Wrapper>
+    <Wrapper ref={ref} isHidden={isHidden}>
       <Image className="image-one" isTop={isTop}>
         <img
           src={imageOne.src}
@@ -12,6 +29,7 @@ const LargeImageContainer = ({ imageOne, imageTwo }) => {
           onClick={() => toggleTop(!isTop)}
         />
       </Image>
+
       <Image className="image-two" isTop={!isTop}>
         <img
           src={imageTwo.src}
@@ -28,7 +46,27 @@ const Wrapper = styled.div`
   height: 100%;
   width: 100%;
 
+  ${({ isHidden }) =>
+    isHidden
+      ? css`
+          .image-one {
+            opacity: 0;
+            transform: translateX(-30px);
+          }
+          .image-two {
+            opacity: 0;
+            transform: translateX(30px);
+          }
+        `
+      : css`
+          .image-one .image-two {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        `}
+
   .image-one {
+    transition: all 1s;
     position: absolute;
     top: 0;
     left: 0;
@@ -36,6 +74,7 @@ const Wrapper = styled.div`
     height: 90%;
   }
   .image-two {
+    transition: all 1s;
     position: absolute;
     bottom: 0;
     right: 0;
