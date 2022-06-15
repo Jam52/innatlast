@@ -4,7 +4,8 @@ import RoomCard from '../components/RoomCard';
 import Overview from '../components/Overview';
 import { Link } from 'react-router-dom';
 import IntaFeed from '../components/InstaFeed';
-import FadeInTransition from '../components/transitions/FaceInSide';
+import FadeInTransition from '../components/transitions/FadeInTransition';
+import FadeInSide from '../components/transitions/FadeInSide';
 
 const LandingPage = (props) => {
   return (
@@ -40,14 +41,17 @@ const LandingPage = (props) => {
 
       <div className="section bg-primary">
         <div className="container flow flow--lg">
-          <div className="para flow flow--md">
-            <h2 className="h1">Explore Your Stay</h2>
-            <Divider option="2" right={false} />
-            <p className=" quote">
-              “Quiet, relaxing and energizing at the same time!”
-              <span> - Jane Smith</span>
-            </p>
-          </div>
+          <FadeInSide fromLeft>
+            <div className="para flow flow--md">
+              <h2 className="h1">Explore Your Stay</h2>
+              <Divider option="2" right={false} />
+              <p className=" quote">
+                “Quiet, relaxing and energizing at the same time!”
+                <span> - Jane Smith</span>
+              </p>
+            </div>
+          </FadeInSide>
+
           <FadeInTransition>
             <div className="card-container">
               <Link to="/journey">
@@ -89,26 +93,30 @@ const LandingPage = (props) => {
               </Link>
             </div>
           </FadeInTransition>
+          <FadeInSide>
+            <div className="para para--right flow flow--md">
+              <h2 className="h1">Stay and play.</h2>
+              <Divider option="3" right={true} />
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et
+                arcu justo. Sed congue nibh nibh, eu laoreet metus imperdiet
+                non. Proin quis dignissim turpis. Vestibulum vitae ligula et
+                orci elementum varius.
+              </p>
+            </div>
+          </FadeInSide>
+          <FadeInTransition>
+            <div className="hflow">
+              <img
+                src="/images/insta_accent.svg"
+                alt="instgram"
+                className="icon"
+              />
+              <h2>#inAtLast</h2>
+            </div>
 
-          <div className="para para--right flow flow--md">
-            <h2 className="h1">Stay and play.</h2>
-            <Divider option="3" right={true} />
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et
-              arcu justo. Sed congue nibh nibh, eu laoreet metus imperdiet non.
-              Proin quis dignissim turpis. Vestibulum vitae ligula et orci
-              elementum varius.
-            </p>
-          </div>
-          <div className="hflow">
-            <img
-              src="/images/insta_accent.svg"
-              alt="instgram"
-              className="icon"
-            />
-            <h2>#inAtLast</h2>
-          </div>
-          <IntaFeed />
+            <IntaFeed />
+          </FadeInTransition>
         </div>
       </div>
       <Overview

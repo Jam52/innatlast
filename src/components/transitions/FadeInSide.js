@@ -19,34 +19,27 @@ const FadeInSide = (props) => {
   });
 
   return (
-    <Wrapper
-      ref={ref}
-      fromLeft={props.fromLeft}
-      isHidden={isHidden}
-      delay={props.delay}
-    >
+    <Wrapper ref={ref} fromLeft={props.fromLeft} isHidden={isHidden}>
       {props.children}
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
   transition: all 1s;
+  opacity: 0;
   ${({ isHidden }) =>
     isHidden
       ? css`
           opacity: 0;
           transform: translateX(
-            ${({ fromLeft }) => (fromLeft ? '-50px' : '50px')}
+            ${({ fromLeft }) => (fromLeft ? '-80px' : '80px')}
           );
         `
       : css`
           opacity: 1;
           transform: translateX(0);
-        `}
+        `};
 `;
 
 export default FadeInSide;

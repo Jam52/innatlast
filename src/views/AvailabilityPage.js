@@ -4,6 +4,7 @@ import Divider from '../components/Divider';
 import { SelectedableButton } from '../components/buttons';
 import Calendar from '../components/Calendar/Calendar';
 import { isSelectedDatesValid } from '../components/Calendar/dateSelectLogic';
+import FadeInSide from '../components/transitions/FadeInSide';
 const dayjs = require('dayjs');
 
 const AvailabilityPage = (props) => {
@@ -75,16 +76,18 @@ const AvailabilityPage = (props) => {
   return (
     <Wrapper className="section flow flow--lg" season={season}>
       <div className=" container">
-        <div className="header align flow flow--md">
-          <h1 className="para">Book Your Stay.</h1>
-          <Divider />
-          <p className="para">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et
-            arcu justo. Sed congue nibh nibh, eu laoreet metus imperdiet non.
-            Proin quis dignissim turpis. Vestibulum vitae ligula et orci
-            elementum varius.
-          </p>
-        </div>
+        <FadeInSide fromLeft>
+          <div className="header align flow flow--md">
+            <h1 className="para">Book Your Stay.</h1>
+            <Divider />
+            <p className="para">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et
+              arcu justo. Sed congue nibh nibh, eu laoreet metus imperdiet non.
+              Proin quis dignissim turpis. Vestibulum vitae ligula et orci
+              elementum varius.
+            </p>
+          </div>
+        </FadeInSide>
       </div>
       <div className="button-container space container">
         <SelectedableButton
@@ -173,16 +176,18 @@ const AvailabilityPage = (props) => {
         </div>
       </div>
       <div className="container">
-        <div className="header align flow flow--md para para--right">
-          <h1>{season}</h1>
-          <Divider right option="3" />
-          <p className="para">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et
-            arcu justo. Sed congue nibh nibh, eu laoreet metus imperdiet non.
-            Proin quis dignissim turpis. Vestibulum vitae ligula et orci
-            elementum varius.
-          </p>
-        </div>
+        <FadeInSide>
+          <div className="header align flow flow--md para para--right">
+            <h1>{season}</h1>
+            <Divider right option="3" />
+            <p className="para">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et
+              arcu justo. Sed congue nibh nibh, eu laoreet metus imperdiet non.
+              Proin quis dignissim turpis. Vestibulum vitae ligula et orci
+              elementum varius.
+            </p>
+          </div>
+        </FadeInSide>
       </div>
     </Wrapper>
   );

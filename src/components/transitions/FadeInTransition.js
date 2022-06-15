@@ -30,7 +30,7 @@ const FadeInTransition = (props) => {
 const Wrapper = styled.div`
   .hidden {
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateY(80px);
   }
 
   .fade_in {
@@ -39,13 +39,13 @@ const Wrapper = styled.div`
     animation-name: fadeIn;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
-    animation-duration: 0.7s;
+    animation-duration: 0.6s;
   }
 
   @keyframes fadeIn {
     0% {
       opacity: 0;
-      transform: translateY(100px);
+      transform: translateY(80px);
     }
     100% {
       opacity: 1;

@@ -66,7 +66,7 @@ const Wrapper = styled.div`
         `}
 
   .image-one {
-    transition: all 1s;
+    transition: all 1.5s;
     position: absolute;
     top: 0;
     left: 0;
@@ -74,7 +74,7 @@ const Wrapper = styled.div`
     height: 90%;
   }
   .image-two {
-    transition: all 1s;
+    transition: all 1.5s;
     position: absolute;
     bottom: 0;
     right: 0;
