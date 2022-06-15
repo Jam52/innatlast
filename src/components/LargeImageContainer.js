@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import styled, { css } from 'styled-components';
 
-const LargeImageContainer = ({ imageOne, imageTwo, delay }) => {
+const LargeImageContainer = ({ imageOne, imageTwo }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     rootMargin: '-100px',
@@ -14,7 +14,7 @@ const LargeImageContainer = ({ imageOne, imageTwo, delay }) => {
     if (inView) {
       setTimeout(() => {
         setHidden(false);
-      }, delay);
+      }, 200);
     }
   });
 
@@ -66,7 +66,7 @@ const Wrapper = styled.div`
         `}
 
   .image-one {
-    transition: all 1.5s;
+    transition: all 0.7s;
     position: absolute;
     top: 0;
     left: 0;
@@ -74,7 +74,7 @@ const Wrapper = styled.div`
     height: 90%;
   }
   .image-two {
-    transition: all 1.5s;
+    transition: all 0.7s;
     position: absolute;
     bottom: 0;
     right: 0;

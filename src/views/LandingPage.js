@@ -52,47 +52,46 @@ const LandingPage = (props) => {
             </div>
           </FadeInSide>
 
-          <FadeInTransition>
-            <div className="card-container">
-              <Link to="/journey">
-                <RoomCard
-                  image={{ src: 'room1.jpg', alt: '' }}
-                  details={[
-                    { src: 'bed.svg', alt: '', text: 'Cozy Queen size bed' },
-                    { src: 'person.svg', alt: '', text: 'Max 2 Person' },
-                    { src: 'bright.svg', alt: '', text: 'Bright & Relaxing' },
-                  ]}
-                  title="The Journey"
-                />
-              </Link>
-              <Link to="/honeymoon">
-                <RoomCard
-                  image={{ src: 'room2.jpg', alt: '' }}
-                  details={[
-                    { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
-                    { src: 'person.svg', alt: '', text: 'Max 2 Person' },
-                    { src: 'dreamy.svg', alt: '', text: 'Intimate & Dreamy' },
-                  ]}
-                  title="The Honeymoon"
-                />
-              </Link>
-              <Link to="/tribe">
-                <RoomCard
-                  image={{ src: 'room3.jpg', alt: '' }}
-                  details={[
-                    { src: 'bed.svg', alt: '', text: 'Queen Bed & Bunk Bed' },
-                    { src: 'person.svg', alt: '', text: 'Max 5 Person' },
-                    {
-                      src: 'comfort.svg',
-                      alt: '',
-                      text: 'Comfortable & Bright',
-                    },
-                  ]}
-                  title="The Tribe"
-                />
-              </Link>
-            </div>
-          </FadeInTransition>
+          <div className="card-container">
+            <Link to="/journey">
+              <RoomCard
+                image={{ src: 'room1.jpg', alt: '' }}
+                details={[
+                  { src: 'bed.svg', alt: '', text: 'Cozy Queen size bed' },
+                  { src: 'person.svg', alt: '', text: 'Max 2 Person' },
+                  { src: 'bright.svg', alt: '', text: 'Bright & Relaxing' },
+                ]}
+                title="The Journey"
+              />
+            </Link>
+            <Link to="/honeymoon">
+              <RoomCard
+                image={{ src: 'room2.jpg', alt: '' }}
+                details={[
+                  { src: 'bed.svg', alt: '', text: '1 x Queen Bed' },
+                  { src: 'person.svg', alt: '', text: 'Max 2 Person' },
+                  { src: 'dreamy.svg', alt: '', text: 'Intimate & Dreamy' },
+                ]}
+                title="The Honeymoon"
+              />
+            </Link>
+            <Link to="/tribe">
+              <RoomCard
+                image={{ src: 'room3.jpg', alt: '' }}
+                details={[
+                  { src: 'bed.svg', alt: '', text: 'Queen Bed & Bunk Bed' },
+                  { src: 'person.svg', alt: '', text: 'Max 5 Person' },
+                  {
+                    src: 'comfort.svg',
+                    alt: '',
+                    text: 'Comfortable & Bright',
+                  },
+                ]}
+                title="The Tribe"
+              />
+            </Link>
+          </div>
+
           <FadeInSide>
             <div className="para para--right flow flow--md">
               <h2 className="h1">Stay and play.</h2>
@@ -105,18 +104,17 @@ const LandingPage = (props) => {
               </p>
             </div>
           </FadeInSide>
-          <FadeInTransition>
-            <div className="hflow">
-              <img
-                src="/images/insta_accent.svg"
-                alt="instgram"
-                className="icon"
-              />
-              <h2>#inAtLast</h2>
-            </div>
 
-            <IntaFeed />
-          </FadeInTransition>
+          <div className="hflow">
+            <img
+              src="/images/insta_accent.svg"
+              alt="instgram"
+              className="icon"
+            />
+            <h2>#inAtLast</h2>
+          </div>
+
+          <IntaFeed />
         </div>
       </div>
       <Overview
